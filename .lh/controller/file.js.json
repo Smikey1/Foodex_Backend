@@ -1,0 +1,22 @@
+{
+    "sourceFile": "controller/file.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1673579992632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1673620736557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,8 @@\n   },\r\n });\r\n \r\n //now we need to check the file type\r\n-\r\n const filefilter = (req, file, cb) => {\r\n   if (\r\n     file.mimetype === \"image/jpeg\" ||\r\n     file.mimetype === \"image/png\" ||\r\n"
+                }
+            ],
+            "date": 1673579992632,
+            "name": "Commit-0",
+            "content": "import multer from \"multer\";\r\n\r\nconst storage = multer.diskStorage({\r\n  destination: function (req, file, cb) {\r\n    cb(null, \"./gallery\");\r\n  },\r\n  filename: function (req, file, cb) {\r\n    cb(null, Date.now() + file.originalname);\r\n  },\r\n});\r\n\r\n//now we need to check the file type\r\n\r\nconst filefilter = (req, file, cb) => {\r\n  if (\r\n    file.mimetype === \"image/jpeg\" ||\r\n    file.mimetype === \"image/png\" ||\r\n    file.mimetype === \"image/jpg\" ||\r\n    file.mimetype === \"image/gif\"\r\n  ) {\r\n    cb(null, true);\r\n  } else {\r\n    cb(null, false);\r\n  }\r\n};\r\n\r\nconst upload = multer({\r\n  storage: storage,\r\n  fileFilter: filefilter,\r\n});\r\n\r\nexport default upload;\r\n"
+        }
+    ]
+}

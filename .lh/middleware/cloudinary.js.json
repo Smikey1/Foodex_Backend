@@ -1,0 +1,46 @@
+{
+    "sourceFile": "middleware/cloudinary.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1674991617874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1674991628346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const cloudinary = require(\"cloudinary\").v2\r\n const cloud_name = process.env.CLOUD_NAME\r\n const api_secret = process.env.CLOUD_SECRET_KEY;\r\n-const api_key = process.env.API_KEY\r\n+const api_key = process.env.CLOUD_API_KEY;\r\n \r\n cloudinary.config({ cloud_name, api_secret, api_key })\r\n \r\n exports.upload_image = async (imagePath, userId) => {\r\n"
+                },
+                {
+                    "date": 1674991636877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,8 @@\n \r\n exports.upload_image = async (imagePath, userId) => {\r\n     const profile = await cloudinary.uploader.upload(imagePath, {\r\n         public_id: userId + Date.now(),\r\n-        folder: \"folder_name\"\r\n+        folder: \"Foodex\"\r\n     })\r\n     return profile.secure_url\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1674991663292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n-const cloudinary = require(\"cloudinary\").v2\r\n-const cloud_name = process.env.CLOUD_NAME\r\n+const cloudinary = require(\"cloudinary\").v2;\r\n+const cloud_name = process.env.CLOUD_NAME;\r\n const api_secret = process.env.CLOUD_SECRET_KEY;\r\n const api_key = process.env.CLOUD_API_KEY;\r\n \r\n-cloudinary.config({ cloud_name, api_secret, api_key })\r\n+cloudinary.config({ cloud_name, api_secret, api_key });\r\n \r\n exports.upload_image = async (imagePath, userId) => {\r\n-    const profile = await cloudinary.uploader.upload(imagePath, {\r\n-        public_id: userId + Date.now(),\r\n-        folder: \"Foodex\"\r\n\\ No newline at end of file\n-    })\r\n-    return profile.secure_url\r\n-}\n+  const profile = await cloudinary.uploader.upload(imagePath, {\r\n+    public_id: userId + Date.now(),\r\n+    folder: \"Foodex\",\r\n+  });\r\n+  return profile.secure_url;\r\n+};\r\n"
+                },
+                {
+                    "date": 1674993318626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const api_key = process.env.CLOUD_API_KEY;\r\n \r\n cloudinary.config({ cloud_name, api_secret, api_key });\r\n \r\n-exports.upload_image = async (imagePath, userId) => {\r\n+exports conupload_image = async (imagePath, userId) => {\r\n   const profile = await cloudinary.uploader.upload(imagePath, {\r\n     public_id: userId + Date.now(),\r\n     folder: \"Foodex\",\r\n   });\r\n"
+                },
+                {
+                    "date": 1674993340011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n-const cloudinary = require(\"cloudinary\").v2;\r\n+import cloudinary = require(\"cloudinary\").v2;\r\n const cloud_name = process.env.CLOUD_NAME;\r\n const api_secret = process.env.CLOUD_SECRET_KEY;\r\n const api_key = process.env.CLOUD_API_KEY;\r\n \r\n cloudinary.config({ cloud_name, api_secret, api_key });\r\n \r\n-exports conupload_image = async (imagePath, userId) => {\r\n+export const upload_image = async (imagePath, userId) => {\r\n   const profile = await cloudinary.uploader.upload(imagePath, {\r\n     public_id: userId + Date.now(),\r\n     folder: \"Foodex\",\r\n   });\r\n"
+                },
+                {
+                    "date": 1674993366334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import cloudinary = require(\"cloudinary\").v2;\r\n+import { v2 as cloudinary } from \"cloudinary\";\r\n const cloud_name = process.env.CLOUD_NAME;\r\n const api_secret = process.env.CLOUD_SECRET_KEY;\r\n const api_key = process.env.CLOUD_API_KEY;\r\n \r\n"
+                },
+                {
+                    "date": 1675328810491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,4 +11,5 @@\n     folder: \"Foodex\",\r\n   });\r\n   return profile.secure_url;\r\n };\r\n+a\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1674991617874,
+            "name": "Commit-0",
+            "content": "const cloudinary = require(\"cloudinary\").v2\r\nconst cloud_name = process.env.CLOUD_NAME\r\nconst api_secret = process.env.CLOUD_SECRET_KEY;\r\nconst api_key = process.env.API_KEY\r\n\r\ncloudinary.config({ cloud_name, api_secret, api_key })\r\n\r\nexports.upload_image = async (imagePath, userId) => {\r\n    const profile = await cloudinary.uploader.upload(imagePath, {\r\n        public_id: userId + Date.now(),\r\n        folder: \"folder_name\"\r\n    })\r\n    return profile.secure_url\r\n}"
+        }
+    ]
+}

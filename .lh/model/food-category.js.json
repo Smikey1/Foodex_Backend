@@ -1,0 +1,110 @@
+{
+    "sourceFile": "model/food-category.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 23,
+            "patches": [
+                {
+                    "date": 1673601386443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1673601906546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n const foodCategorySchema = new mongoose.Schema({\r\n   title: {\r\n     type: String,\r\n-    required: [true, \"Please filled foodTitle\"],\r\n+    required: [true, \"Please filled food Title\"],\r\n   },\r\n   foodImage: {\r\n     type: String,\r\n   },\r\n"
+                },
+                {
+                    "date": 1673601912258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n const foodCategorySchema = new mongoose.Schema({\r\n   title: {\r\n     type: String,\r\n-    required: [true, \"Please filled food Title\"],\r\n+    required: [true, \"Please filled food categrTitle\"],\r\n   },\r\n   foodImage: {\r\n     type: String,\r\n   },\r\n"
+                },
+                {
+                    "date": 1674559405753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,11 @@\n \r\n const foodCategorySchema = new mongoose.Schema({\r\n   title: {\r\n     type: String,\r\n-    required: [true, \"Please filled food categrTitle\"],\r\n+    required: [true, \"Please filled food category title\"],\r\n   },\r\n-  foodImage: {\r\n+  foodCategoryImage: {\r\n     type: String,\r\n   },\r\n   createAt: {\r\n     type: Date,\r\n"
+                },
+                {
+                    "date": 1674559412774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import mongoose from \"mongoose\";\r\n \r\n const foodCategorySchema = new mongoose.Schema({\r\n-  title: {\r\n+  foodtitle: {\r\n     type: String,\r\n     required: [true, \"Please filled food category title\"],\r\n   },\r\n-  foodCategoryImage: {\r\n+  foodCategoryImageUrl: {\r\n     type: String,\r\n   },\r\n   createAt: {\r\n     type: Date,\r\n"
+                },
+                {
+                    "date": 1674559418552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import mongoose from \"mongoose\";\r\n \r\n const foodCategorySchema = new mongoose.Schema({\r\n-  foodtitle: {\r\n+  foodCategorytitle: {\r\n     type: String,\r\n     required: [true, \"Please filled food category title\"],\r\n   },\r\n   foodCategoryImageUrl: {\r\n"
+                },
+                {
+                    "date": 1674559424858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import mongoose from \"mongoose\";\r\n \r\n const foodCategorySchema = new mongoose.Schema({\r\n-  foodCategorytitle: {\r\n+  foodCategoryTitle: {\r\n     type: String,\r\n     required: [true, \"Please filled food category title\"],\r\n   },\r\n   foodCategoryImageUrl: {\r\n"
+                },
+                {
+                    "date": 1674559433510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,11 +7,11 @@\n   },\r\n   foodCategoryImageUrl: {\r\n     type: String,\r\n   },\r\n-  createAt: {\r\n+  foodCategorycreateAt: {\r\n     type: Date,\r\n     default: Date.now(),\r\n   },\r\n });\r\n \r\n\\ No newline at end of file\n-export default mongoose.model(\"Food_Category\", foodCategorySchema);\n+export default mongoose.model(\"Food_Category\", foodCategorySchema);\r\n"
+                },
+                {
+                    "date": 1674559580718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,15 @@\n import mongoose from \"mongoose\";\r\n \r\n const foodCategorySchema = new mongoose.Schema({\r\n-  foodCategoryTitle: {\r\n+  title: {\r\n     type: String,\r\n     required: [true, \"Please filled food category title\"],\r\n   },\r\n-  foodCategoryImageUrl: {\r\n+  foodImage: {\r\n     type: String,\r\n   },\r\n-  foodCategorycreateAt: {\r\n+  createAt: {\r\n     type: Date,\r\n     default: Date.now(),\r\n   },\r\n });\r\n"
+                },
+                {
+                    "date": 1674559588866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import mongoose from \"mongoose\";\r\n \r\n const foodCategorySchema = new mongoose.Schema({\r\n-  title: {\r\n+  foodCategoryTitle: {\r\n     type: String,\r\n     required: [true, \"Please filled food category title\"],\r\n   },\r\n   foodImage: {\r\n@@ -13,5 +13,5 @@\n     default: Date.now(),\r\n   },\r\n });\r\n \r\n-export default mongoose.model(\"Food_Category\", foodCategorySchema);\n\\ No newline at end of file\n+export default mongoose.model(\"Food_Category\", foodCategorySchema);\r\n"
+                },
+                {
+                    "date": 1674559613418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   foodCategoryTitle: {\r\n     type: String,\r\n     required: [true, \"Please filled food category title\"],\r\n   },\r\n-  foodImage: {\r\n+  foodCategoryImageUrl: {\r\n     type: String,\r\n   },\r\n   createAt: {\r\n     type: Date,\r\n"
+                },
+                {
+                    "date": 1674559623050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   },\r\n   foodCategoryImageUrl: {\r\n     type: String,\r\n   },\r\n-  createAt: {\r\n+  foodCategoryCreateAt: {\r\n     type: Date,\r\n     default: Date.now(),\r\n   },\r\n });\r\n"
+                },
+                {
+                    "date": 1675341876555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n   },\r\n   foodCategoryImageUrl: {\r\n     type: String,\r\n   },\r\n+  food\r\n   foodCategoryCreateAt: {\r\n     type: Date,\r\n     default: Date.now(),\r\n   },\r\n"
+                },
+                {
+                    "date": 1675341881814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,10 @@\n   },\r\n   foodCategoryImageUrl: {\r\n     type: String,\r\n   },\r\n-  food\r\n+  food:\r\n+    ,\r\n   foodCategoryCreateAt: {\r\n     type: Date,\r\n     default: Date.now(),\r\n   },\r\n"
+                },
+                {
+                    "date": 1675341898212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,14 @@\n   },\r\n   foodCategoryImageUrl: {\r\n     type: String,\r\n   },\r\n-  food:\r\n+  food:{\r\n+    type: mongoose.Schema.Types.ObjectId,\r\n+    required: [true, \"Please select the category\"],\r\n+    ref: \"Food_Category\",\r\n+  },\r\n+\r\n     ,\r\n   foodCategoryCreateAt: {\r\n     type: Date,\r\n     default: Date.now(),\r\n"
+                },
+                {
+                    "date": 1675341904115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,8 @@\n     type: mongoose.Schema.Types.ObjectId,\r\n     required: [true, \"Please select the category\"],\r\n     ref: \"Food_Category\",\r\n   },\r\n-\r\n-    ,\r\n   foodCategoryCreateAt: {\r\n     type: Date,\r\n     default: Date.now(),\r\n   },\r\n"
+                },
+                {
+                    "date": 1675341919323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     type: String,\r\n   },\r\n   food:{\r\n     type: mongoose.Schema.Types.ObjectId,\r\n-    required: [true, \"Please select the category\"],\r\n+    // required: [true, \"Please select the category\"],\r\n     ref: \"Food_Category\",\r\n   },\r\n   foodCategoryCreateAt: {\r\n     type: Date,\r\n"
+                },
+                {
+                    "date": 1675341935477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,12 +7,12 @@\n   },\r\n   foodCategoryImageUrl: {\r\n     type: String,\r\n   },\r\n-  food:{\r\n+  food: {\r\n     type: mongoose.Schema.Types.ObjectId,\r\n     // required: [true, \"Please select the category\"],\r\n-    ref: \"Food_Category\",\r\n+    ref: \"Food\",\r\n   },\r\n   foodCategoryCreateAt: {\r\n     type: Date,\r\n     default: Date.now(),\r\n"
+                },
+                {
+                    "date": 1675342026292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   },\r\n   foodCategoryImageUrl: {\r\n     type: String,\r\n   },\r\n-  food: {\r\n+  food: {{\r\n     type: mongoose.Schema.Types.ObjectId,\r\n     // required: [true, \"Please select the category\"],\r\n     ref: \"Food\",\r\n   },\r\n"
+                },
+                {
+                    "date": 1675342032076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   food: {{\r\n     type: mongoose.Schema.Types.ObjectId,\r\n     // required: [true, \"Please select the category\"],\r\n     ref: \"Food\",\r\n-  },\r\n+}},\r\n   foodCategoryCreateAt: {\r\n     type: Date,\r\n     default: Date.now(),\r\n   },\r\n"
+                },
+                {
+                    "date": 1675342037393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,13 +7,15 @@\n   },\r\n   foodCategoryImageUrl: {\r\n     type: String,\r\n   },\r\n-  food: {{\r\n-    type: mongoose.Schema.Types.ObjectId,\r\n-    // required: [true, \"Please select the category\"],\r\n-    ref: \"Food\",\r\n-}},\r\n+  food: [\r\n+    {\r\n+      type: mongoose.Schema.Types.ObjectId,\r\n+      // required: [true, \"Please select the category\"],\r\n+      ref: \"Food\",\r\n+    },\r\n+  ],\r\n   foodCategoryCreateAt: {\r\n     type: Date,\r\n     default: Date.now(),\r\n   },\r\n"
+                },
+                {
+                    "date": 1675342043354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,8 @@\n   },\r\n   food: [\r\n     {\r\n       type: mongoose.Schema.Types.ObjectId,\r\n-      // required: [true, \"Please select the category\"],\r\n       ref: \"Food\",\r\n     },\r\n   ],\r\n   foodCategoryCreateAt: {\r\n"
+                },
+                {
+                    "date": 1675346263770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   },\r\n   food: [\r\n     {\r\n       type: mongoose.Schema.Types.ObjectId,\r\n-      ref: \"Food\",\r\n+      ref: \"food\",\r\n     },\r\n   ],\r\n   foodCategoryCreateAt: {\r\n     type: Date,\r\n"
+                },
+                {
+                    "date": 1675346287951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   },\r\n   food: [\r\n     {\r\n       type: mongoose.Schema.Types.ObjectId,\r\n-      ref: \"food\",\r\n+      ref: \"ood\",\r\n     },\r\n   ],\r\n   foodCategoryCreateAt: {\r\n     type: Date,\r\n"
+                }
+            ],
+            "date": 1673601386443,
+            "name": "Commit-0",
+            "content": "import mongoose from \"mongoose\";\r\n\r\nconst foodCategorySchema = new mongoose.Schema({\r\n  title: {\r\n    type: String,\r\n    required: [true, \"Please filled foodTitle\"],\r\n  },\r\n  foodImage: {\r\n    type: String,\r\n  },\r\n  createAt: {\r\n    type: Date,\r\n    default: Date.now(),\r\n  },\r\n});\r\n\r\nexport default mongoose.model(\"Food_Category\", foodCategorySchema);"
+        }
+    ]
+}

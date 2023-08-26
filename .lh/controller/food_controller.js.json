@@ -1,0 +1,138 @@
+{
+    "sourceFile": "controller/food_controller.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 30,
+            "patches": [
+                {
+                    "date": 1673607053878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1673607061141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-import \n\\ No newline at end of file\n+import food from \"../model/food\";\r\n+\r\n"
+                },
+                {
+                    "date": 1673607066367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n-import food from \"../model/food\";\r\n+import Food from \"../model/food\";\r\n \r\n"
+                },
+                {
+                    "date": 1673607076537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,3 @@\n import Food from \"../model/food\";\r\n \r\n+export \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607095291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import Food from \"../model/food\";\r\n \r\n-export \n\\ No newline at end of file\n+export const addFood = \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607101754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import Food from \"../model/food\";\r\n \r\n-export const addFood = \n\\ No newline at end of file\n+export const addFood = async (req, res)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607107743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n import Food from \"../model/food\";\r\n \r\n-export const addFood = async (req, res)\n\\ No newline at end of file\n+export const addFood = async (req, res) => {\r\n+    try\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607113593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,9 @@\n import Food from \"../model/food\";\r\n \r\n export const addFood = async (req, res) => {\r\n-    try\r\n+    try {\r\n+        const \r\n+    } catch (error) {\r\n+        \r\n+    }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607119272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import Food from \"../model/food\";\r\n \r\n export const addFood = async (req, res) => {\r\n     try {\r\n-        const \r\n+        const {title, }\r\n     } catch (error) {\r\n         \r\n     }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607126123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import Food from \"../model/food\";\r\n \r\n export const addFood = async (req, res) => {\r\n     try {\r\n-        const {title, }\r\n+        const {title, description, }\r\n     } catch (error) {\r\n         \r\n     }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607136768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import Food from \"../model/food\";\r\n \r\n export const addFood = async (req, res) => {\r\n     try {\r\n-        const {title, description, }\r\n+        const {title, description, price }\r\n     } catch (error) {\r\n         \r\n     }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607150969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import Food from \"../model/food\";\r\n \r\n export const addFood = async (req, res) => {\r\n     try {\r\n-        const {title, description, price }\r\n+        const {title, description, price } = req.\r\n     } catch (error) {\r\n         \r\n     }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607162563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import Food from \"../model/food\";\r\n \r\n export const addFood = async (req, res) => {\r\n     try {\r\n-        const {title, description, price } = req.\r\n+        const { title, description, price } = req.body;\r\n+        if\r\n     } catch (error) {\r\n         \r\n     }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607169243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n export const addFood = async (req, res) => {\r\n     try {\r\n         const { title, description, price } = req.body;\r\n-        if\r\n+        if((!title))\r\n     } catch (error) {\r\n         \r\n     }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607219745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n export const addFood = async (req, res) => {\r\n     try {\r\n         const { title, description, price } = req.body;\r\n-        if((!title))\r\n+        if((!title ||  ))\r\n     } catch (error) {\r\n         \r\n     }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607290892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n export const addFood = async (req, res) => {\r\n     try {\r\n         const { title, description, price } = req.body;\r\n-        if((!title ||  ))\r\n+        if((!title || description ))\r\n     } catch (error) {\r\n         \r\n     }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607297227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n export const addFood = async (req, res) => {\r\n     try {\r\n         const { title, description, price } = req.body;\r\n-        if((!title || description ))\r\n+        if((!title || description || !price ))\r\n     } catch (error) {\r\n         \r\n     }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607304279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n \r\n export const addFood = async (req, res) => {\r\n     try {\r\n         const { title, description, price } = req.body;\r\n-        if((!title || description || !price ))\r\n+        if ((!title || description || !price)) {\r\n+            \r\n+        }\r\n     } catch (error) {\r\n         \r\n     }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607314231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n export const addFood = async (req, res) => {\r\n     try {\r\n         const { title, description, price } = req.body;\r\n         if ((!title || description || !price)) {\r\n-            \r\n+            return \r\n         }\r\n     } catch (error) {\r\n         \r\n     }\r\n"
+                },
+                {
+                    "date": 1673607321569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n export const addFood = async (req, res) => {\r\n     try {\r\n         const { title, description, price } = req.body;\r\n         if ((!title || description || !price)) {\r\n-            return \r\n+            return\r\n         }\r\n     } catch (error) {\r\n         \r\n     }\r\n"
+                },
+                {
+                    "date": 1673607328475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n export const addFood = async (req, res) => {\r\n     try {\r\n         const { title, description, price } = req.body;\r\n         if ((!title || description || !price)) {\r\n-            return\r\n+            return res.sta\r\n         }\r\n     } catch (error) {\r\n         \r\n     }\r\n"
+                },
+                {
+                    "date": 1673607335006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n export const addFood = async (req, res) => {\r\n     try {\r\n         const { title, description, price } = req.body;\r\n         if ((!title || description || !price)) {\r\n-            return res.sta\r\n+            return res.status(400).json\r\n         }\r\n     } catch (error) {\r\n         \r\n     }\r\n"
+                },
+                {
+                    "date": 1673607342913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,11 @@\n export const addFood = async (req, res) => {\r\n     try {\r\n         const { title, description, price } = req.body;\r\n         if ((!title || description || !price)) {\r\n-            return res.status(400).json\r\n+            return res.status(400).json({\r\n+                success\r\n+            })\r\n         }\r\n     } catch (error) {\r\n         \r\n     }\r\n"
+                },
+                {
+                    "date": 1673607348794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     try {\r\n         const { title, description, price } = req.body;\r\n         if ((!title || description || !price)) {\r\n             return res.status(400).json({\r\n-                success\r\n+                success: false;\r\n             })\r\n         }\r\n     } catch (error) {\r\n         \r\n"
+                },
+                {
+                    "date": 1673607354983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,10 @@\n     try {\r\n         const { title, description, price } = req.body;\r\n         if ((!title || description || !price)) {\r\n             return res.status(400).json({\r\n-                success: false;\r\n+                success: false,\r\n+                message: \"\"\r\n             })\r\n         }\r\n     } catch (error) {\r\n         \r\n"
+                },
+                {
+                    "date": 1673607363918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n         const { title, description, price } = req.body;\r\n         if ((!title || description || !price)) {\r\n             return res.status(400).json({\r\n                 success: false,\r\n-                message: \"\"\r\n+                message: \"Field can\"\r\n             })\r\n         }\r\n     } catch (error) {\r\n         \r\n"
+                },
+                {
+                    "date": 1673607369065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n         const { title, description, price } = req.body;\r\n         if ((!title || description || !price)) {\r\n             return res.status(400).json({\r\n                 success: false,\r\n-                message: \"Field can\"\r\n+                message: \"Field can't be emp\"\r\n             })\r\n         }\r\n     } catch (error) {\r\n         \r\n"
+                },
+                {
+                    "date": 1673607374849,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n         const { title, description, price } = req.body;\r\n         if ((!title || description || !price)) {\r\n             return res.status(400).json({\r\n                 success: false,\r\n-                message: \"Field can't be emp\"\r\n-            })\r\n+                message: \"Field can't be empty\"\r\n+            });\r\n         }\r\n     } catch (error) {\r\n         \r\n     }\r\n"
+                },
+                {
+                    "date": 1673607385822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,10 @@\n                 success: false,\r\n                 message: \"Field can't be empty\"\r\n             });\r\n         }\r\n+\r\n+        const \r\n     } catch (error) {\r\n         \r\n     }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607392358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n                 message: \"Field can't be empty\"\r\n             });\r\n         }\r\n \r\n-        const Image = req.\r\n+        const Image = req.f\r\n     } catch (error) {\r\n         \r\n     }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607466019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n                 message: \"Food name already exist\",\r\n               });\r\n             }\r\n \r\n-            const food = await .create({\r\n+            const food = await F.create({\r\n               title,\r\n               foodImage: Image,\r\n             });\r\n \r\n"
+                }
+            ],
+            "date": 1673607053878,
+            "name": "Commit-0",
+            "content": "import "
+        }
+    ]
+}

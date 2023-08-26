@@ -1,0 +1,518 @@
+{
+    "sourceFile": "controller/user_controller.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 125,
+            "patches": [
+                {
+                    "date": 1672367616523,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1672367628876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,9 +91,9 @@\n \r\n //single profile\r\n export const singleProfile = async (req, res) => {\r\n     try {\r\n-        user \r\n+        const user = fin\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n"
+                },
+                {
+                    "date": 1672367635597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,9 +91,9 @@\n \r\n //single profile\r\n export const singleProfile = async (req, res) => {\r\n     try {\r\n-        const user = fin\r\n+        const user = \r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n"
+                },
+                {
+                    "date": 1672367641988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,9 +91,9 @@\n \r\n //single profile\r\n export const singleProfile = async (req, res) => {\r\n     try {\r\n-        const user = \r\n+        const user = await \r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n"
+                },
+                {
+                    "date": 1672367650515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+import user from \"../model/user.js\";\r\n import User from \"../model/user.js\"\r\n \r\n // Register\r\n export const register = async (req, res) => {\r\n@@ -91,9 +92,9 @@\n \r\n //single profile\r\n export const singleProfile = async (req, res) => {\r\n     try {\r\n-        const user = await \r\n+        const user = await user.find\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n"
+                },
+                {
+                    "date": 1672367661270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,9 +92,9 @@\n \r\n //single profile\r\n export const singleProfile = async (req, res) => {\r\n     try {\r\n-        const user = await user.find\r\n+        const user = await user.findById\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n"
+                },
+                {
+                    "date": 1672367668751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,9 +92,9 @@\n \r\n //single profile\r\n export const singleProfile = async (req, res) => {\r\n     try {\r\n-        const user = await user.findById\r\n+        const user = await user.findById(req.User)\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n"
+                },
+                {
+                    "date": 1672367675213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,9 +92,9 @@\n \r\n //single profile\r\n export const singleProfile = async (req, res) => {\r\n     try {\r\n-        const user = await user.findById(req.User)\r\n+        const user = await user.findById(req.User.i)\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n"
+                },
+                {
+                    "date": 1672367682103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,9 +92,9 @@\n \r\n //single profile\r\n export const singleProfile = async (req, res) => {\r\n     try {\r\n-        const user = await user.findById(req.User.i)\r\n+        const user = await user.findById(req.User.)\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n"
+                },
+                {
+                    "date": 1672367703464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,9 +92,10 @@\n \r\n //single profile\r\n export const singleProfile = async (req, res) => {\r\n     try {\r\n-        const user = await user.findById(req.User.)\r\n+        const user = await user.findById(req.User.id)\r\n+        if()\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n"
+                },
+                {
+                    "date": 1672367709013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,9 +93,11 @@\n //single profile\r\n export const singleProfile = async (req, res) => {\r\n     try {\r\n         const user = await user.findById(req.User.id)\r\n-        if()\r\n+        if (!user) {\r\n+            \r\n+        }\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n"
+                },
+                {
+                    "date": 1672368511588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,9 +94,9 @@\n export const singleProfile = async (req, res) => {\r\n     try {\r\n         const user = await user.findById(req.User.id)\r\n         if (!user) {\r\n-            \r\n+            return \r\n         }\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n"
+                },
+                {
+                    "date": 1672368517661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,9 +94,9 @@\n export const singleProfile = async (req, res) => {\r\n     try {\r\n         const user = await user.findById(req.User.id)\r\n         if (!user) {\r\n-            return \r\n+            return status \r\n         }\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n"
+                },
+                {
+                    "date": 1672368526084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,9 +94,9 @@\n export const singleProfile = async (req, res) => {\r\n     try {\r\n         const user = await user.findById(req.User.id)\r\n         if (!user) {\r\n-            return status \r\n+            return res.status \r\n         }\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n"
+                },
+                {
+                    "date": 1672368539587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,9 +94,11 @@\n export const singleProfile = async (req, res) => {\r\n     try {\r\n         const user = await user.findById(req.User.id)\r\n         if (!user) {\r\n-            return res.status \r\n+            return res.status(400).json({\r\n+                \r\n+            }) \r\n         }\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n"
+                },
+                {
+                    "date": 1672368546167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,9 +95,9 @@\n     try {\r\n         const user = await user.findById(req.User.id)\r\n         if (!user) {\r\n             return res.status(400).json({\r\n-                \r\n+                success\r\n             }) \r\n         }\r\n         \r\n     } catch (error) {\r\n"
+                },
+                {
+                    "date": 1672368552333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,9 +95,9 @@\n     try {\r\n         const user = await user.findById(req.User.id)\r\n         if (!user) {\r\n             return res.status(400).json({\r\n-                success\r\n+                success : fail\r\n             }) \r\n         }\r\n         \r\n     } catch (error) {\r\n"
+                },
+                {
+                    "date": 1672368558432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,9 +95,9 @@\n     try {\r\n         const user = await user.findById(req.User.id)\r\n         if (!user) {\r\n             return res.status(400).json({\r\n-                success : fail\r\n+                Fail t\r\n             }) \r\n         }\r\n         \r\n     } catch (error) {\r\n"
+                },
+                {
+                    "date": 1672368564041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,9 +95,10 @@\n     try {\r\n         const user = await user.findById(req.User.id)\r\n         if (!user) {\r\n             return res.status(400).json({\r\n-                Fail t\r\n+                Fail to get user,\r\n+                \r\n             }) \r\n         }\r\n         \r\n     } catch (error) {\r\n"
+                },
+                {
+                    "date": 1672368570382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,10 +95,10 @@\n     try {\r\n         const user = await user.findById(req.User.id)\r\n         if (!user) {\r\n             return res.status(400).json({\r\n-                Fail to get user,\r\n-                \r\n+                Fail to get user;\r\n+\r\n             }) \r\n         }\r\n         \r\n     } catch (error) {\r\n"
+                },
+                {
+                    "date": 1672368577706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,9 +95,9 @@\n     try {\r\n         const user = await user.findById(req.User.id)\r\n         if (!user) {\r\n             return res.status(400).json({\r\n-                Fail to get user;\r\n+                \r\n \r\n             }) \r\n         }\r\n         \r\n"
+                },
+                {
+                    "date": 1672368584949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,8 +95,9 @@\n     try {\r\n         const user = await user.findById(req.User.id)\r\n         if (!user) {\r\n             return res.status(400).json({\r\n+                Success: false,\r\n                 \r\n \r\n             }) \r\n         }\r\n"
+                },
+                {
+                    "date": 1672368590875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,9 +96,9 @@\n         const user = await user.findById(req.User.id)\r\n         if (!user) {\r\n             return res.status(400).json({\r\n                 Success: false,\r\n-                \r\n+                message: \r\n \r\n             }) \r\n         }\r\n         \r\n"
+                },
+                {
+                    "date": 1672368603592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,9 +96,9 @@\n         const user = await user.findById(req.User.id)\r\n         if (!user) {\r\n             return res.status(400).json({\r\n                 Success: false,\r\n-                message: \r\n+                message: \"User doesnot exist\"\r\n \r\n             }) \r\n         }\r\n         \r\n"
+                },
+                {
+                    "date": 1672368620247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,10 +96,9 @@\n         const user = await user.findById(req.User.id)\r\n         if (!user) {\r\n             return res.status(400).json({\r\n                 Success: false,\r\n-                message: \"User doesnot exist\"\r\n-\r\n+                message: \"User doesnot exist\",\r\n             }) \r\n         }\r\n         \r\n     } catch (error) {\r\n"
+                },
+                {
+                    "date": 1672368625388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -97,11 +97,12 @@\n         if (!user) {\r\n             return res.status(400).json({\r\n                 Success: false,\r\n                 message: \"User doesnot exist\",\r\n-            }) \r\n+            });\r\n         }\r\n         \r\n+        \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n             message: error.message,\r\n"
+                },
+                {
+                    "date": 1672368789445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -99,8 +99,9 @@\n                 Success: false,\r\n                 message: \"User doesnot exist\",\r\n             });\r\n         }\r\n+\r\n         \r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n"
+                },
+                {
+                    "date": 1672368799768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,10 +100,10 @@\n                 message: \"User doesnot exist\",\r\n             });\r\n         }\r\n \r\n+        const userData\r\n         \r\n-        \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n             message: error.message,\r\n"
+                },
+                {
+                    "date": 1672368806202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,9 +100,11 @@\n                 message: \"User doesnot exist\",\r\n             });\r\n         }\r\n \r\n-        const userData\r\n+        const userData = {\r\n+            \r\n+        }\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n"
+                },
+                {
+                    "date": 1672368813090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,9 +101,9 @@\n             });\r\n         }\r\n \r\n         const userData = {\r\n-            \r\n+            id: user.id\r\n         }\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n"
+                },
+                {
+                    "date": 1672368821567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,9 +101,10 @@\n             });\r\n         }\r\n \r\n         const userData = {\r\n-            id: user.id\r\n+            id: user._id,\r\n+\r\n         }\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n"
+                },
+                {
+                    "date": 1672368850454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,8 +102,9 @@\n         }\r\n \r\n         const userData = {\r\n             id: user._id,\r\n+            email: user.\r\n \r\n         }\r\n         \r\n     } catch (error) {\r\n"
+                },
+                {
+                    "date": 1672368861569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,9 +102,11 @@\n         }\r\n \r\n         const userData = {\r\n             id: user._id,\r\n-            email: user.\r\n+            email: user.email,\r\n+            phone: user.phone,\r\n+            \r\n \r\n         }\r\n         \r\n     } catch (error) {\r\n"
+                },
+                {
+                    "date": 1672368870334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -104,9 +104,9 @@\n         const userData = {\r\n             id: user._id,\r\n             email: user.email,\r\n             phone: user.phone,\r\n-            \r\n+            password: user.password\r\n \r\n         }\r\n         \r\n     } catch (error) {\r\n"
+                },
+                {
+                    "date": 1672368959000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -104,10 +104,8 @@\n         const userData = {\r\n             id: user._id,\r\n             email: user.email,\r\n             phone: user.phone,\r\n-            password: user.password\r\n-\r\n         }\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n"
+                },
+                {
+                    "date": 1672368973384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -104,10 +104,12 @@\n         const userData = {\r\n             id: user._id,\r\n             email: user.email,\r\n             phone: user.phone,\r\n-        }\r\n+        };\r\n+\r\n         \r\n+        \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n             message: error.message,\r\n"
+                },
+                {
+                    "date": 1672368982073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,10 +106,10 @@\n             email: user.email,\r\n             phone: user.phone,\r\n         };\r\n \r\n+        res.status\r\n         \r\n-        \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n             message: error.message,\r\n"
+                },
+                {
+                    "date": 1672368989760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,9 +106,11 @@\n             email: user.email,\r\n             phone: user.phone,\r\n         };\r\n \r\n-        res.status\r\n+        res.status(200).json({\r\n+            \r\n+        })\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n"
+                },
+                {
+                    "date": 1672369035580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,8 +107,9 @@\n             phone: user.phone,\r\n         };\r\n \r\n         res.status(200).json({\r\n+            success: true,\r\n             \r\n         })\r\n         \r\n     } catch (error) {\r\n"
+                },
+                {
+                    "date": 1672369040912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -108,9 +108,9 @@\n         };\r\n \r\n         res.status(200).json({\r\n             success: true,\r\n-            \r\n+            message: \"\"\r\n         })\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n"
+                },
+                {
+                    "date": 1672369053310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -108,9 +108,9 @@\n         };\r\n \r\n         res.status(200).json({\r\n             success: true,\r\n-            message: \"\"\r\n+            message: \"User get success\"\r\n         })\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n"
+                },
+                {
+                    "date": 1672369154694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -108,9 +108,10 @@\n         };\r\n \r\n         res.status(200).json({\r\n             success: true,\r\n-            message: \"User get success\"\r\n+            message: \"User get success\",\r\n+            \r\n         })\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n"
+                },
+                {
+                    "date": 1672369165764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,9 +109,9 @@\n \r\n         res.status(200).json({\r\n             success: true,\r\n             message: \"User get success\",\r\n-            \r\n+            data: \r\n         })\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n"
+                },
+                {
+                    "date": 1672369825395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -99,9 +99,9 @@\n                 Success: false,\r\n                 message: \"User doesnot exist\",\r\n             });\r\n         }\r\n-\r\n+aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXxxxxxxxxxxxxxxxxxxxx\r\n         const userData = {\r\n             id: user._id,\r\n             email: user.email,\r\n             phone: user.phone,\r\n@@ -109,9 +109,9 @@\n \r\n         res.status(200).json({\r\n             success: true,\r\n             message: \"User get success\",\r\n-            data: \r\n+            data: userData\r\n         })\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n"
+                },
+                {
+                    "date": 1672369831026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -99,9 +99,9 @@\n                 Success: false,\r\n                 message: \"User doesnot exist\",\r\n             });\r\n         }\r\n-aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXxxxxxxxxxxxxxxxxxxxx\r\n+aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXxxxxxxxxxxxxxxxxxxxxXxxxxxxxxxxxxxxxxxxxxxxxXXX\r\n         const userData = {\r\n             id: user._id,\r\n             email: user.email,\r\n             phone: user.phone,\r\n"
+                },
+                {
+                    "date": 1672369847999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -99,9 +99,9 @@\n                 Success: false,\r\n                 message: \"User doesnot exist\",\r\n             });\r\n         }\r\n-aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXxxxxxxxxxxxxxxxxxxxxXxxxxxxxxxxxxxxxxxxxxxxxXXX\r\n+xxxxxxxxxxxxxxxxXXX\r\n         const userData = {\r\n             id: user._id,\r\n             email: user.email,\r\n             phone: user.phone,\r\n"
+                },
+                {
+                    "date": 1672369858488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,12 +96,12 @@\n         const user = await user.findById(req.User.id)\r\n         if (!user) {\r\n             return res.status(400).json({\r\n                 Success: false,\r\n-                message: \"User doesnot exist\",\r\n+                message: \"User does not exist\",\r\n             });\r\n         }\r\n-xxxxxxxxxxxxxxxxXXX\r\n+\r\n         const userData = {\r\n             id: user._id,\r\n             email: user.email,\r\n             phone: user.phone,\r\n"
+                },
+                {
+                    "date": 1672369885289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -115,9 +115,9 @@\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n-            message: error.message,\r\n+            message: error.message\",\r\n         });\r\n         \r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1672369900922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -115,9 +115,9 @@\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n-            message: error.message\",\r\n+            message: \"error.message,\r\n         });\r\n         \r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1672370000908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,9 +90,9 @@\n     }\r\n }\r\n \r\n //single profile\r\n-export const singleProfile = async (req, res) => {\r\n+export const single = async (req, res) => {\r\n     try {\r\n         const user = await user.findById(req.User.id)\r\n         if (!user) {\r\n             return res.status(400).json({\r\n@@ -115,9 +115,9 @@\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n-            message: \"error.message,\r\n+            message: error.message,\r\n         });\r\n         \r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1672370673781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,9 +90,9 @@\n     }\r\n }\r\n \r\n //single profile\r\n-export const single = async (req, res) => {\r\n+export const userProfile = async (req, res) => {\r\n     try {\r\n         const user = await user.findById(req.User.id)\r\n         if (!user) {\r\n             return res.status(400).json({\r\n"
+                },
+                {
+                    "date": 1672371323712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-import user from \"../model/user.js\";\r\n import User from \"../model/user.js\"\r\n \r\n // Register\r\n export const register = async (req, res) => {\r\n"
+                },
+                {
+                    "date": 1672371350958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,9 +91,9 @@\n \r\n //single profile\r\n export const userProfile = async (req, res) => {\r\n     try {\r\n-        const user = await user.findById(req.User.id)\r\n+        const user = await User.findById(req.User.id)\r\n         if (!user) {\r\n             return res.status(400).json({\r\n                 Success: false,\r\n                 message: \"User does not exist\",\r\n"
+                },
+                {
+                    "date": 1672371357386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,9 +91,9 @@\n \r\n //single profile\r\n export const userProfile = async (req, res) => {\r\n     try {\r\n-        const user = await User.findById(req.User.id)\r\n+        const user = await User.findById(req.user.id)\r\n         if (!user) {\r\n             return res.status(400).json({\r\n                 Success: false,\r\n                 message: \"User does not exist\",\r\n"
+                },
+                {
+                    "date": 1672371419616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,9 +109,9 @@\n         res.status(200).json({\r\n             success: true,\r\n             message: \"User get success\",\r\n             data: userData\r\n-        })\r\n+        });\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n"
+                },
+                {
+                    "date": 1672372523324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,9 +100,9 @@\n             });\r\n         }\r\n \r\n         const userData = {\r\n-            id: user._id,\r\n+            id: user._Id,\r\n             email: user.email,\r\n             phone: user.phone,\r\n         };\r\n \r\n"
+                },
+                {
+                    "date": 1672372536051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,9 +100,9 @@\n             });\r\n         }\r\n \r\n         const userData = {\r\n-            id: user._Id,\r\n+            Id: user._Id,\r\n             email: user.email,\r\n             phone: user.phone,\r\n         };\r\n \r\n"
+                },
+                {
+                    "date": 1672372546206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,9 +100,9 @@\n             });\r\n         }\r\n \r\n         const userData = {\r\n-            Id: user._Id,\r\n+            id: user._id,\r\n             email: user.email,\r\n             phone: user.phone,\r\n         };\r\n \r\n"
+                },
+                {
+                    "date": 1672373237271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -114,9 +114,8 @@\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n-            message: error.message,\r\n-        });\r\n+            message: error.message,       });\r\n         \r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1672377425653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -103,8 +103,9 @@\n         const userData = {\r\n             id: user._id,\r\n             email: user.email,\r\n             phone: user.phone,\r\n+            avatar\r\n         };\r\n \r\n         res.status(200).json({\r\n             success: true,\r\n"
+                },
+                {
+                    "date": 1672377435460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -103,9 +103,9 @@\n         const userData = {\r\n             id: user._id,\r\n             email: user.email,\r\n             phone: user.phone,\r\n-            avatar\r\n+            \r\n         };\r\n \r\n         res.status(200).json({\r\n             success: true,\r\n"
+                },
+                {
+                    "date": 1672377747471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -99,19 +99,19 @@\n                 message: \"User does not exist\",\r\n             });\r\n         }\r\n \r\n-        const userData = {\r\n-            id: user._id,\r\n-            email: user.email,\r\n-            phone: user.phone,\r\n+        // const userData = {\r\n+        //     id: user._id,\r\n+        //     email: user.email,\r\n+        //     phone: user.phone,\r\n             \r\n-        };\r\n+        // };\r\n \r\n         res.status(200).json({\r\n             success: true,\r\n             message: \"User get success\",\r\n-            data: userData\r\n+            data,\r\n         });\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n"
+                },
+                {
+                    "date": 1672377761213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,9 +109,9 @@\n \r\n         res.status(200).json({\r\n             success: true,\r\n             message: \"User get success\",\r\n-            data,\r\n+            data:user,\r\n         });\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n"
+                },
+                {
+                    "date": 1672377929846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -99,19 +99,19 @@\n                 message: \"User does not exist\",\r\n             });\r\n         }\r\n \r\n-        // const userData = {\r\n-        //     id: user._id,\r\n-        //     email: user.email,\r\n-        //     phone: user.phone,\r\n+        const userData = {\r\n+            id: user._id,\r\n+            email: user.email,\r\n+            phone: user.phone,\r\n             \r\n-        // };\r\n+        };\r\n \r\n         res.status(200).json({\r\n             success: true,\r\n             message: \"User get success\",\r\n-            data:user,\r\n+            data:userData,\r\n         });\r\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n"
+                },
+                {
+                    "date": 1672378148663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n // Register\r\n export const register = async (req, res) => {\r\n     try {\r\n-        const { email, phone, password } = req.body;\r\n+        const { fullName,email,dob, phone, password } = req.body;\r\n         if (!email || !phone || !password) {\r\n             return res.status(400).json({\r\n                 success: false,\r\n                 message: \"Form are needed to fill!\",\r\n@@ -25,8 +25,10 @@\n         }\r\n \r\n         const user = await User.create({\r\n             email,\r\n+            fullName,\r\n+            dob,\r\n             phone,\r\n             password\r\n         });\r\n \r\n"
+                },
+                {
+                    "date": 1672378480354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -103,8 +103,10 @@\n         }\r\n \r\n         const userData = {\r\n             id: user._id,\r\n+            fullName: user.fullName,\r\n+            dob:user.dob,\r\n             email: user.email,\r\n             phone: user.phone,\r\n             \r\n         };\r\n@@ -121,4 +123,6 @@\n             message: error.message,       });\r\n         \r\n     }\r\n }\r\n+\r\n+//update profile\r\n"
+                },
+                {
+                    "date": 1672582410463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n // Register\r\n export const register = async (req, res) => {\r\n     try {\r\n-        const { fullName,email,dob, phone, password } = req.body;\r\n+        const { email, phone, password } = req.body;\r\n         if (!email || !phone || !password) {\r\n             return res.status(400).json({\r\n                 success: false,\r\n                 message: \"Form are needed to fill!\",\r\n@@ -25,10 +25,8 @@\n         }\r\n \r\n         const user = await User.create({\r\n             email,\r\n-            fullName,\r\n-            dob,\r\n             phone,\r\n             password\r\n         });\r\n \r\n"
+                },
+                {
+                    "date": 1672584571494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -123,4 +123,33 @@\n     }\r\n }\r\n \r\n //update profile\r\n+export const updateProfile = async (req, res) => {\r\n+  try {\r\n+    const {email, phone } = req.body;\r\n+    const avatar = req.file.filename;\r\n+\r\n+    const user = await User.findByIdAndUpdate(\r\n+      req.user.id,\r\n+      { email, phone },\r\n+      { new: true, runValidators: true, useFindAndModify: false }\r\n+    );\r\n+\r\n+    const userData = {\r\n+      id: user._id,\r\n+      email: user.email,\r\n+      phone: user.phone,\r\n+    };\r\n+\r\n+    res.status(200).json({\r\n+      success: true,\r\n+      message: \"user update Successfully!\",\r\n+      data: userData,\r\n+    });\r\n+  } catch (error) {\r\n+    return res.status(500).json({\r\n+      success: false,\r\n+      message: error.message,\r\n+    });\r\n+  }\r\n+};\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672588759593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -125,9 +125,9 @@\n \r\n //update profile\r\n export const updateProfile = async (req, res) => {\r\n   try {\r\n-    const {email, phone } = req.body;\r\n+    const {email, fullName, dob, phone } = req.body;\r\n     const avatar = req.file.filename;\r\n \r\n     const user = await User.findByIdAndUpdate(\r\n       req.user.id,\r\n@@ -137,8 +137,10 @@\n \r\n     const userData = {\r\n       id: user._id,\r\n       email: user.email,\r\n+    fullName: user.fullName,\r\n+      dob:user.dob,\r\n       phone: user.phone,\r\n     };\r\n \r\n     res.status(200).json({\r\n"
+                },
+                {
+                    "date": 1672588804651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,20 +126,20 @@\n //update profile\r\n export const updateProfile = async (req, res) => {\r\n   try {\r\n     const {email, fullName, dob, phone } = req.body;\r\n-    const avatar = req.file.filename;\r\n+    // const avatar = req.file.filename;\r\n \r\n     const user = await User.findByIdAndUpdate(\r\n       req.user.id,\r\n-      { email, phone },\r\n+      { email, fullName, dob, phone },\r\n       { new: true, runValidators: true, useFindAndModify: false }\r\n     );\r\n \r\n     const userData = {\r\n       id: user._id,\r\n       email: user.email,\r\n-    fullName: user.fullName,\r\n+      fullName: user.fullName,\r\n       dob:user.dob,\r\n       phone: user.phone,\r\n     };\r\n \r\n"
+                },
+                {
+                    "date": 1673107217612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n \r\n // Register\r\n export const register = async (req, res) => {\r\n     try {\r\n-        const { email, phone, password } = req.body;\r\n-        if (!email || !phone || !password) {\r\n+        const { email, fullName, dob, phone, password } = req.body;\r\n+        if (!email || fullName || dob || !phone || !password) {\r\n             return res.status(400).json({\r\n                 success: false,\r\n                 message: \"Form are needed to fill!\",\r\n             });\r\n@@ -25,8 +25,10 @@\n         }\r\n \r\n         const user = await User.create({\r\n             email,\r\n+            fullName,\r\n+            dob,\r\n             phone,\r\n             password\r\n         });\r\n \r\n"
+                },
+                {
+                    "date": 1673107598444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n                 success: false,\r\n                 message: \"Form are needed to fill!\",\r\n             });\r\n         }\r\n-        if (password.length < 10) {\r\n+        if (password.length < ) {\r\n             return res.status(400).json({\r\n                 success: false,\r\n                 message: \"Password must be 10 character!!\",\r\n             });\r\n"
+                },
+                {
+                    "date": 1673108211709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n                 success: false,\r\n                 message: \"Form are needed to fill!\",\r\n             });\r\n         }\r\n-        if (password.length < ) {\r\n+        if (password.length < 8) {\r\n             return res.status(400).json({\r\n                 success: false,\r\n                 message: \"Password must be 10 character!!\",\r\n             });\r\n@@ -52,9 +52,9 @@\n         const { email, password } = req.body;\r\n         if (!email || !password) {\r\n             return res.status(400).json({\r\n                 success: false,\r\n-                message:\"filled must be filled!\"\r\n+                message:\"fieled must be filled!\"\r\n             })\r\n         }\r\n \r\n         let user = await User.findOne({ email }).select(\"+password\")\r\n"
+                },
+                {
+                    "date": 1673109111522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n         const { email, password } = req.body;\r\n         if (!email || !password) {\r\n             return res.status(400).json({\r\n                 success: false,\r\n-                message:\"fieled must be filled!\"\r\n+                message:\"field must be filled!\"\r\n             })\r\n         }\r\n \r\n         let user = await User.findOne({ email }).select(\"+password\")\r\n@@ -119,9 +119,10 @@\n         \r\n     } catch (error) {\r\n           return res.status(500).json({\r\n             success: false,\r\n-            message: error.message,       });\r\n+              message: error.message,\r\n+          });\r\n         \r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1673109488170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,8 @@\n               return res.status(400).json({\r\n                 success: false,\r\n                 message:\"Invalid credentials!\"\r\n             })\r\n-            \r\n         }\r\n \r\n         const token = await user.getSignedJwtToken()\r\n         res.status(200).json({\r\n"
+                },
+                {
+                    "date": 1673112050769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,8 @@\n         const token = await user.getSignedJwtToken()\r\n         res.status(200).json({\r\n             success: true,\r\n             message: \"Login successfully!\",\r\n-            user,\r\n             token\r\n         })\r\n         \r\n     } catch (error) {\r\n"
+                },
+                {
+                    "date": 1673578323225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -154,5 +154,6 @@\n       success: false,\r\n       message: error.message,\r\n     });\r\n   }\r\n-};\n\\ No newline at end of file\n+};\r\n+\r\n"
+                },
+                {
+                    "date": 1673578331741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -156,4 +156,5 @@\n     });\r\n   }\r\n };\r\n \r\n+// Delete Profile\r\n"
+                },
+                {
+                    "date": 1673578394773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -157,4 +157,27 @@\n   }\r\n };\r\n \r\n // Delete Profile\r\n+\r\n+export const deleteProfile = async (req, res) => {\r\n+  try {\r\n+    const user = await User.findById(req.user.id);\r\n+    if (!user) {\r\n+      return res.status(400).json({\r\n+        success: false,\r\n+        message: \"User does not found!\",\r\n+      });\r\n+    }\r\n+\r\n+    await user.remove();\r\n+    res.status(200).json({\r\n+      success: true,\r\n+      message: \"User delete successfully!\",\r\n+    });\r\n+  } catch (error) {\r\n+    return res.status(500).json({\r\n+      success: false,\r\n+      message: error.message,\r\n+    });\r\n+  }\r\n+};\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673579656632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -140,9 +140,10 @@\n       id: user._id,\r\n       email: user.email,\r\n       fullName: user.fullName,\r\n       dob:user.dob,\r\n-      phone: user.phone,\r\n+        phone: user.phone,\r\n+      \r\n     };\r\n \r\n     res.status(200).json({\r\n       success: true,\r\n"
+                },
+                {
+                    "date": 1673579664606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -141,9 +141,9 @@\n       email: user.email,\r\n       fullName: user.fullName,\r\n       dob:user.dob,\r\n         phone: user.phone,\r\n-      \r\n+      avatar: \r\n     };\r\n \r\n     res.status(200).json({\r\n       success: true,\r\n"
+                },
+                {
+                    "date": 1673579679705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -141,9 +141,9 @@\n       email: user.email,\r\n       fullName: user.fullName,\r\n       dob:user.dob,\r\n         phone: user.phone,\r\n-      avatar: \r\n+      avatar: user.avatar\r\n     };\r\n \r\n     res.status(200).json({\r\n       success: true,\r\n"
+                },
+                {
+                    "date": 1673579725148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,9 +127,9 @@\n //update profile\r\n export const updateProfile = async (req, res) => {\r\n   try {\r\n     const {email, fullName, dob, phone } = req.body;\r\n-    // const avatar = req.file.filename;\r\n+    const avatar = req.file.filename;\r\n \r\n     const user = await User.findByIdAndUpdate(\r\n       req.user.id,\r\n       { email, fullName, dob, phone },\r\n"
+                },
+                {
+                    "date": 1673579750553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -131,9 +131,9 @@\n     const avatar = req.file.filename;\r\n \r\n     const user = await User.findByIdAndUpdate(\r\n       req.user.id,\r\n-      { email, fullName, dob, phone },\r\n+      { email, fullName, dob, phone, a },\r\n       { new: true, runValidators: true, useFindAndModify: false }\r\n     );\r\n \r\n     const userData = {\r\n"
+                },
+                {
+                    "date": 1673579762373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -131,9 +131,9 @@\n     const avatar = req.file.filename;\r\n \r\n     const user = await User.findByIdAndUpdate(\r\n       req.user.id,\r\n-      { email, fullName, dob, phone, a },\r\n+      { email, fullName, dob, phone, avatar: avatar },\r\n       { new: true, runValidators: true, useFindAndModify: false }\r\n     );\r\n \r\n     const userData = {\r\n"
+                },
+                {
+                    "date": 1673580074086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,9 +127,9 @@\n //update profile\r\n export const updateProfile = async (req, res) => {\r\n   try {\r\n     const {email, fullName, dob, phone } = req.body;\r\n-    const avatar = req.file.filename;\r\n+    const avatar = req.filename;\r\n \r\n     const user = await User.findByIdAndUpdate(\r\n       req.user.id,\r\n       { email, fullName, dob, phone, avatar: avatar },\r\n"
+                },
+                {
+                    "date": 1673580578357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -141,9 +141,8 @@\n       email: user.email,\r\n       fullName: user.fullName,\r\n       dob:user.dob,\r\n         phone: user.phone,\r\n-      avatar: user.avatar\r\n     };\r\n \r\n     res.status(200).json({\r\n       success: true,\r\n"
+                },
+                {
+                    "date": 1673580584802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -131,18 +131,18 @@\n     const avatar = req.filename;\r\n \r\n     const user = await User.findByIdAndUpdate(\r\n       req.user.id,\r\n-      { email, fullName, dob, phone, avatar: avatar },\r\n+      { email, fullName, dob, phone},\r\n       { new: true, runValidators: true, useFindAndModify: false }\r\n     );\r\n \r\n     const userData = {\r\n       id: user._id,\r\n       email: user.email,\r\n       fullName: user.fullName,\r\n       dob:user.dob,\r\n-        phone: user.phone,\r\n+        phone: user.phone\r\n     };\r\n \r\n     res.status(200).json({\r\n       success: true,\r\n"
+                },
+                {
+                    "date": 1673580590745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,10 +127,10 @@\n //update profile\r\n export const updateProfile = async (req, res) => {\r\n   try {\r\n     const {email, fullName, dob, phone } = req.body;\r\n-    const avatar = req.filename;\r\n \r\n+\r\n     const user = await User.findByIdAndUpdate(\r\n       req.user.id,\r\n       { email, fullName, dob, phone},\r\n       { new: true, runValidators: true, useFindAndModify: false }\r\n"
+                },
+                {
+                    "date": 1673597907456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n \r\n // Register\r\n export const register = async (req, res) => {\r\n     try {\r\n-        const { email, fullName, dob, phone, password } = req.body;\r\n+      const { email, fullName, dob, phone, password } = req.body;\r\n+      \r\n+      \r\n         if (!email || fullName || dob || !phone || !password) {\r\n             return res.status(400).json({\r\n                 success: false,\r\n                 message: \"Form are needed to fill!\",\r\n"
+                },
+                {
+                    "date": 1673597914574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,10 @@\n export const register = async (req, res) => {\r\n     try {\r\n       const { email, fullName, dob, phone, password } = req.body;\r\n       \r\n-      \r\n+      const avatar \r\n+\r\n         if (!email || fullName || dob || !phone || !password) {\r\n             return res.status(400).json({\r\n                 success: false,\r\n                 message: \"Form are needed to fill!\",\r\n"
+                },
+                {
+                    "date": 1673597922750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n export const register = async (req, res) => {\r\n     try {\r\n       const { email, fullName, dob, phone, password } = req.body;\r\n       \r\n-      const avatar \r\n+      const avatar = req.filename\r\n \r\n         if (!email || fullName || dob || !phone || !password) {\r\n             return res.status(400).json({\r\n                 success: false,\r\n"
+                },
+                {
+                    "date": 1673597950313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n export const register = async (req, res) => {\r\n     try {\r\n       const { email, fullName, dob, phone, password } = req.body;\r\n       \r\n-      const avatar = req.filename\r\n+      const avatar = req.filename;\r\n \r\n         if (!email || fullName || dob || !phone || !password) {\r\n             return res.status(400).json({\r\n                 success: false,\r\n@@ -31,9 +31,10 @@\n             email,\r\n             fullName,\r\n             dob,\r\n             phone,\r\n-            password\r\n+          password,\r\n+            \r\n         });\r\n \r\n \r\n         res.status(200).json({\r\n"
+                },
+                {
+                    "date": 1673597976053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,9 @@\n             fullName,\r\n             dob,\r\n             phone,\r\n           password,\r\n+          \r\n             \r\n         });\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1673597981747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n             fullName,\r\n             dob,\r\n             phone,\r\n           password,\r\n-          \r\n+          avatar: avatar,\r\n             \r\n         });\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1673598045342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,9 +109,10 @@\n             id: user._id,\r\n             fullName: user.fullName,\r\n             dob:user.dob,\r\n             email: user.email,\r\n-            phone: user.phone,\r\n+          phone: user.phone,\r\n+            avatar:\r\n             \r\n         };\r\n \r\n         res.status(200).json({\r\n"
+                },
+                {
+                    "date": 1673598062713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -110,9 +110,9 @@\n             fullName: user.fullName,\r\n             dob:user.dob,\r\n             email: user.email,\r\n           phone: user.phone,\r\n-            avatar:\r\n+            avatar:user.avatar\r\n             \r\n         };\r\n \r\n         res.status(200).json({\r\n"
+                },
+                {
+                    "date": 1673598111209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,9 +146,10 @@\n       id: user._id,\r\n       email: user.email,\r\n       fullName: user.fullName,\r\n       dob:user.dob,\r\n-        phone: user.phone\r\n+      phone: user.phone,\r\n+        \r\n     };\r\n \r\n     res.status(200).json({\r\n       success: true,\r\n"
+                },
+                {
+                    "date": 1673598117036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -147,9 +147,9 @@\n       email: user.email,\r\n       fullName: user.fullName,\r\n       dob:user.dob,\r\n       phone: user.phone,\r\n-        \r\n+        avatar: user\r\n     };\r\n \r\n     res.status(200).json({\r\n       success: true,\r\n"
+                },
+                {
+                    "date": 1673598281237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,155 +1,147 @@\n-import User from \"../model/user.js\"\r\n+import User from \"../model/user.js\";\r\n \r\n // Register\r\n export const register = async (req, res) => {\r\n-    try {\r\n-      const { email, fullName, dob, phone, password } = req.body;\r\n-      \r\n-      const avatar = req.filename;\r\n+  try {\r\n+    const { email, fullName, dob, phone, password } = req.body;\r\n \r\n-        if (!email || fullName || dob || !phone || !password) {\r\n-            return res.status(400).json({\r\n-                success: false,\r\n-                message: \"Form are needed to fill!\",\r\n-            });\r\n-        }\r\n-        if (password.length < 8) {\r\n-            return res.status(400).json({\r\n-                success: false,\r\n-                message: \"Password must be 10 character!!\",\r\n-            });\r\n-        }\r\n-        const exist = await User.findOne({ email });\r\n-        if (exist) {\r\n-            return res.status(400).json({\r\n-                success: false,\r\n-                message: \"User already exist!\",\r\n-            });\r\n-        }\r\n+    const avatar = req.filename;\r\n \r\n-        const user = await User.create({\r\n-            email,\r\n-            fullName,\r\n-            dob,\r\n-            phone,\r\n-          password,\r\n-          avatar: avatar,\r\n-            \r\n-        });\r\n+    if (!email || fullName || dob || !phone || !password) {\r\n+      return res.status(400).json({\r\n+        success: false,\r\n+        message: \"Form are needed to fill!\",\r\n+      });\r\n+    }\r\n+    if (password.length < 8) {\r\n+      return res.status(400).json({\r\n+        success: false,\r\n+        message: \"Password must be 10 character!!\",\r\n+      });\r\n+    }\r\n+    const exist = await User.findOne({ email });\r\n+    if (exist) {\r\n+      return res.status(400).json({\r\n+        success: false,\r\n+        message: \"User already exist!\",\r\n+      });\r\n+    }\r\n \r\n+    const user = await User.create({\r\n+      email,\r\n+      fullName,\r\n+      dob,\r\n+      phone,\r\n+      password,\r\n+      avatar: avatar,\r\n+    });\r\n \r\n-        res.status(200).json({\r\n-            success: true,\r\n-            message: 'Register Successfully',\r\n-            data:user,\r\n-        })\r\n-    } catch (error) {\r\n-        return res.status(500).json({\r\n-            success: false,\r\n-            message: error.message,\r\n-        });\r\n-    }\r\n-}\r\n+    res.status(200).json({\r\n+      success: true,\r\n+      message: \"Register Successfully\",\r\n+      data: user,\r\n+    });\r\n+  } catch (error) {\r\n+    return res.status(500).json({\r\n+      success: false,\r\n+      message: error.message,\r\n+    });\r\n+  }\r\n+};\r\n \r\n //login\r\n export const login = async (req, res) => {\r\n-    try {\r\n-        const { email, password } = req.body;\r\n-        if (!email || !password) {\r\n-            return res.status(400).json({\r\n-                success: false,\r\n-                message:\"field must be filled!\"\r\n-            })\r\n-        }\r\n+  try {\r\n+    const { email, password } = req.body;\r\n+    if (!email || !password) {\r\n+      return res.status(400).json({\r\n+        success: false,\r\n+        message: \"field must be filled!\",\r\n+      });\r\n+    }\r\n \r\n-        let user = await User.findOne({ email }).select(\"+password\")\r\n-        if (!user) {\r\n-            return res.status(400).json({\r\n-                success: false,\r\n-                message:\"User does not exist!\"\r\n-            })\r\n-        }\r\n+    let user = await User.findOne({ email }).select(\"+password\");\r\n+    if (!user) {\r\n+      return res.status(400).json({\r\n+        success: false,\r\n+        message: \"User does not exist!\",\r\n+      });\r\n+    }\r\n \r\n-        const isMatched = await user.comparePassword(password)\r\n-        if (!isMatched) {\r\n-              return res.status(400).json({\r\n-                success: false,\r\n-                message:\"Invalid credentials!\"\r\n-            })\r\n-        }\r\n-\r\n-        const token = await user.getSignedJwtToken()\r\n-        res.status(200).json({\r\n-            success: true,\r\n-            message: \"Login successfully!\",\r\n-            token\r\n-        })\r\n-        \r\n-    } catch (error) {\r\n-        return res.status(500).json({\r\n-            success: false,\r\n-            message: error.message,\r\n-        });\r\n-        \r\n+    const isMatched = await user.comparePassword(password);\r\n+    if (!isMatched) {\r\n+      return res.status(400).json({\r\n+        success: false,\r\n+        message: \"Invalid credentials!\",\r\n+      });\r\n     }\r\n-}\r\n \r\n+    const token = await user.getSignedJwtToken();\r\n+    res.status(200).json({\r\n+      success: true,\r\n+      message: \"Login successfully!\",\r\n+      token,\r\n+    });\r\n+  } catch (error) {\r\n+    return res.status(500).json({\r\n+      success: false,\r\n+      message: error.message,\r\n+    });\r\n+  }\r\n+};\r\n+\r\n //single profile\r\n export const userProfile = async (req, res) => {\r\n-    try {\r\n-        const user = await User.findById(req.user.id)\r\n-        if (!user) {\r\n-            return res.status(400).json({\r\n-                Success: false,\r\n-                message: \"User does not exist\",\r\n-            });\r\n-        }\r\n+  try {\r\n+    const user = await User.findById(req.user.id);\r\n+    if (!user) {\r\n+      return res.status(400).json({\r\n+        Success: false,\r\n+        message: \"User does not exist\",\r\n+      });\r\n+    }\r\n \r\n-        const userData = {\r\n-            id: user._id,\r\n-            fullName: user.fullName,\r\n-            dob:user.dob,\r\n-            email: user.email,\r\n-          phone: user.phone,\r\n-            avatar:user.avatar\r\n-            \r\n-        };\r\n+    const userData = {\r\n+      id: user._id,\r\n+      fullName: user.fullName,\r\n+      dob: user.dob,\r\n+      email: user.email,\r\n+      phone: user.phone,\r\n+      avatar: user.avatar,\r\n+    };\r\n \r\n-        res.status(200).json({\r\n-            success: true,\r\n-            message: \"User get success\",\r\n-            data:userData,\r\n-        });\r\n-        \r\n-    } catch (error) {\r\n-          return res.status(500).json({\r\n-            success: false,\r\n-              message: error.message,\r\n-          });\r\n-        \r\n-    }\r\n-}\r\n+    res.status(200).json({\r\n+      success: true,\r\n+      message: \"User get success\",\r\n+      data: userData,\r\n+    });\r\n+  } catch (error) {\r\n+    return res.status(500).json({\r\n+      success: false,\r\n+      message: error.message,\r\n+    });\r\n+  }\r\n+};\r\n \r\n //update profile\r\n export const updateProfile = async (req, res) => {\r\n   try {\r\n-    const {email, fullName, dob, phone } = req.body;\r\n+    const { email, fullName, dob, phone } = req.body;\r\n \r\n-\r\n     const user = await User.findByIdAndUpdate(\r\n       req.user.id,\r\n-      { email, fullName, dob, phone},\r\n+      { email, fullName, dob, phone },\r\n       { new: true, runValidators: true, useFindAndModify: false }\r\n     );\r\n \r\n     const userData = {\r\n       id: user._id,\r\n       email: user.email,\r\n       fullName: user.fullName,\r\n-      dob:user.dob,\r\n+      dob: user.dob,\r\n       phone: user.phone,\r\n-        avatar: user\r\n+      avatar: user.avatar,\r\n     };\r\n \r\n     res.status(200).json({\r\n       success: true,\r\n@@ -186,5 +178,5 @@\n       success: false,\r\n       message: error.message,\r\n     });\r\n   }\r\n-};\n\\ No newline at end of file\n+};\r\n"
+                },
+                {
+                    "date": 1673598358864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,8 +126,9 @@\n //update profile\r\n export const updateProfile = async (req, res) => {\r\n   try {\r\n     const { email, fullName, dob, phone } = req.body;\r\n+    const \r\n \r\n     const user = await User.findByIdAndUpdate(\r\n       req.user.id,\r\n       { email, fullName, dob, phone },\r\n"
+                },
+                {
+                    "date": 1673598367476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,9 +126,9 @@\n //update profile\r\n export const updateProfile = async (req, res) => {\r\n   try {\r\n     const { email, fullName, dob, phone } = req.body;\r\n-    const \r\n+    const avatar = req.filename\r\n \r\n     const user = await User.findByIdAndUpdate(\r\n       req.user.id,\r\n       { email, fullName, dob, phone },\r\n"
+                },
+                {
+                    "date": 1673598382276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,13 +126,13 @@\n //update profile\r\n export const updateProfile = async (req, res) => {\r\n   try {\r\n     const { email, fullName, dob, phone } = req.body;\r\n-    const avatar = req.filename\r\n+    const avatar = req.filename;\r\n \r\n     const user = await User.findByIdAndUpdate(\r\n       req.user.id,\r\n-      { email, fullName, dob, phone },\r\n+      { email, fullName, dob, phone, avatar },\r\n       { new: true, runValidators: true, useFindAndModify: false }\r\n     );\r\n \r\n     const userData = {\r\n"
+                },
+                {
+                    "date": 1673598439509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,9 +130,9 @@\n     const avatar = req.filename;\r\n \r\n     const user = await User.findByIdAndUpdate(\r\n       req.user.id,\r\n-      { email, fullName, dob, phone, avatar },\r\n+      { email, fullName, dob, phone, avatar: avatar },\r\n       { new: true, runValidators: true, useFindAndModify: false }\r\n     );\r\n \r\n     const userData = {\r\n"
+                },
+                {
+                    "date": 1673598772636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,9 +126,9 @@\n //update profile\r\n export const updateProfile = async (req, res) => {\r\n   try {\r\n     const { email, fullName, dob, phone } = req.body;\r\n-    const avatar = req.filename;\r\n+    const avatar = req.file.filename;\r\n \r\n     const user = await User.findByIdAndUpdate(\r\n       req.user.id,\r\n       { email, fullName, dob, phone, avatar: avatar },\r\n"
+                },
+                {
+                    "date": 1673598797056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,9 @@\n export const register = async (req, res) => {\r\n   try {\r\n     const { email, fullName, dob, phone, password } = req.body;\r\n \r\n-    const avatar = req.filename;\r\n-\r\n+    const avatar = req.filenam\r\n     if (!email || fullName || dob || !phone || !password) {\r\n       return res.status(400).json({\r\n         success: false,\r\n         message: \"Form are needed to fill!\",\r\n"
+                },
+                {
+                    "date": 1673598802795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,9 @@\n // Register\r\n export const register = async (req, res) => {\r\n   try {\r\n     const { email, fullName, dob, phone, password } = req.body;\r\n-\r\n-    const avatar = req.filenam\r\n+    \r\n     if (!email || fullName || dob || !phone || !password) {\r\n       return res.status(400).json({\r\n         success: false,\r\n         message: \"Form are needed to fill!\",\r\n"
+                },
+                {
+                    "date": 1673598810079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n // Register\r\n export const register = async (req, res) => {\r\n   try {\r\n     const { email, fullName, dob, phone, password } = req.body;\r\n-    \r\n+\r\n     if (!email || fullName || dob || !phone || !password) {\r\n       return res.status(400).json({\r\n         success: false,\r\n         message: \"Form are needed to fill!\",\r\n@@ -30,9 +30,8 @@\n       fullName,\r\n       dob,\r\n       phone,\r\n       password,\r\n-      avatar: avatar,\r\n     });\r\n \r\n     res.status(200).json({\r\n       success: true,\r\n"
+                },
+                {
+                    "date": 1673598883797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n         success: false,\r\n         message: \"Form are needed to fill!\",\r\n       });\r\n     }\r\n-    if (password.length < 8) {\r\n+    if (password.length > 8) {\r\n       return res.status(400).json({\r\n         success: false,\r\n         message: \"Password must be 10 character!!\",\r\n       });\r\n"
+                },
+                {
+                    "date": 1673598893113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,12 +10,12 @@\n         success: false,\r\n         message: \"Form are needed to fill!\",\r\n       });\r\n     }\r\n-    if (password.length > 8) {\r\n+    if (password.length < 8) {\r\n       return res.status(400).json({\r\n         success: false,\r\n-        message: \"Password must be 10 character!!\",\r\n+        message: \"Password must be 8 character!!\",\r\n       });\r\n     }\r\n     const exist = await User.findOne({ email });\r\n     if (exist) {\r\n"
+                },
+                {
+                    "date": 1673599047054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n \r\n //login\r\n export const login = async (req, res) => {\r\n   try {\r\n-    const { email, password } = req.body;\r\n+    const { phone, password } = req.body;\r\n     if (!email || !password) {\r\n       return res.status(400).json({\r\n         success: false,\r\n         message: \"field must be filled!\",\r\n"
+                },
+                {
+                    "date": 1673599054953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n //login\r\n export const login = async (req, res) => {\r\n   try {\r\n     const { phone, password } = req.body;\r\n-    if (!email || !password) {\r\n+    if (!phone || !password) {\r\n       return res.status(400).json({\r\n         success: false,\r\n         message: \"field must be filled!\",\r\n       });\r\n"
+                },
+                {
+                    "date": 1673599061444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n         message: \"field must be filled!\",\r\n       });\r\n     }\r\n \r\n-    let user = await User.findOne({ email }).select(\"+password\");\r\n+    let user = await User.findOne({ phone }).select(\"+password\");\r\n     if (!user) {\r\n       return res.status(400).json({\r\n         success: false,\r\n         message: \"User does not exist!\",\r\n"
+                },
+                {
+                    "date": 1673599738616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n export const register = async (req, res) => {\r\n   try {\r\n     const { email, fullName, dob, phone, password } = req.body;\r\n \r\n-    if (!email || fullName || dob || !phone || !password) {\r\n+    if (!email || fullName || dob || !phone || !password || role) {\r\n       return res.status(400).json({\r\n         success: false,\r\n         message: \"Form are needed to fill!\",\r\n       });\r\n"
+                },
+                {
+                    "date": 1673600784322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n export const register = async (req, res) => {\r\n   try {\r\n     const { email, fullName, dob, phone, password } = req.body;\r\n \r\n-    if (!email || fullName || dob || !phone || !password || role) {\r\n+    if (!email || fullName || dob || !phone || !password) {\r\n       return res.status(400).json({\r\n         success: false,\r\n         message: \"Form are needed to fill!\",\r\n       });\r\n@@ -26,9 +26,9 @@\n     }\r\n \r\n     const user = await User.create({\r\n       email,\r\n-      fullName,\r\n+      fullName,imp\r\n       dob,\r\n       phone,\r\n       password,\r\n     });\r\n"
+                },
+                {
+                    "date": 1673602160700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     }\r\n \r\n     const user = await User.create({\r\n       email,\r\n-      fullName,imp\r\n+      fullName,\r\n       dob,\r\n       phone,\r\n       password,\r\n     });\r\n"
+                },
+                {
+                    "date": 1673613369931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -154,9 +154,8 @@\n   }\r\n };\r\n \r\n // Delete Profile\r\n-\r\n export const deleteProfile = async (req, res) => {\r\n   try {\r\n     const user = await User.findById(req.user.id);\r\n     if (!user) {\r\n"
+                },
+                {
+                    "date": 1673621069487,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -156,9 +156,9 @@\n \r\n // Delete Profile\r\n export const deleteProfile = async (req, res) => {\r\n   try {\r\n-    const user = await User.findById(req.user.id);\r\n+    const user = await User.findById(req.params.id);\r\n     if (!user) {\r\n       return res.status(400).json({\r\n         success: false,\r\n         message: \"User does not found!\",\r\n"
+                },
+                {
+                    "date": 1674991836858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,8 +153,10 @@\n     });\r\n   }\r\n };\r\n \r\n+\r\n+\r\n // Delete Profile\r\n export const deleteProfile = async (req, res) => {\r\n   try {\r\n     const user = await User.findById(req.params.id);\r\n"
+                },
+                {
+                    "date": 1674991895361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,10 +153,25 @@\n     });\r\n   }\r\n };\r\n \r\n+exports.update_profile_picture = async function (req, res) {\r\n+    try {\r\n+        const formImage = req.files.profile        const imagePath = formImage.tempFilePath        if (formImage.mimetype == \"image/png\" || formImage.mimetype == \"image/jpg\" || formImage.mimetype == \"image/jpeg\") {\r\n+            const _id = req.user._id            const profile = await cloudinary.upload_image(imagePath, _id)\r\n+            await User.updateOne({ _id }, { profile })\r\n+            res.json(success(\"Profile Picture Changed\"))\r\n+        }\r\n+        else {\r\n+            res.json(failure(\"Must be png, jpg or jpeg\"))\r\n+        }\r\n+    } catch (error) {\r\n+        console.log(error)\r\n+        res.json(failure())\r\n+    }\r\n+    res.end()\r\n+}\r\n \r\n-\r\n // Delete Profile\r\n export const deleteProfile = async (req, res) => {\r\n   try {\r\n     const user = await User.findById(req.params.id);\r\n"
+                },
+                {
+                    "date": 1674991906706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -154,24 +154,28 @@\n   }\r\n };\r\n \r\n exports.update_profile_picture = async function (req, res) {\r\n-    try {\r\n-        const formImage = req.files.profile        const imagePath = formImage.tempFilePath        if (formImage.mimetype == \"image/png\" || formImage.mimetype == \"image/jpg\" || formImage.mimetype == \"image/jpeg\") {\r\n-            const _id = req.user._id            const profile = await cloudinary.upload_image(imagePath, _id)\r\n-            await User.updateOne({ _id }, { profile })\r\n-            res.json(success(\"Profile Picture Changed\"))\r\n-        }\r\n-        else {\r\n-            res.json(failure(\"Must be png, jpg or jpeg\"))\r\n-        }\r\n-    } catch (error) {\r\n-        console.log(error)\r\n-        res.json(failure())\r\n+  try {\r\n+    const formImage = req.files.profile;\r\n+    const imagePath = formImage.tempFilePath;\r\n+    if (\r\n+      formImage.mimetype == \"image/png\" ||formImage.mimetype == \"image/jpg\" ||\r\n+      formImage.mimetype == \"image/jpeg\"\r\n+    ) {\r\n+      const _id = req.user._id;\r\n+      const profile = await cloudinary.upload_image(imagePath, _id);\r\n+      await User.updateOne({ _id }, { profile });\r\n+      res.json(success(\"Profile Picture Changed\"));\r\n+    } else {\r\n+      res.json(failure(\"Must be png, jpg or jpeg\"));\r\n     }\r\n-    res.end()\r\n-}\r\n-\r\n+  } catch (error) {\r\n+    console.log(error);\r\n+    res.json(failure());\r\n+  }\r\n+  res.end();\r\n+};\r\n // Delete Profile\r\n export const deleteProfile = async (req, res) => {\r\n   try {\r\n     const user = await User.findById(req.params.id);\r\n"
+                },
+                {
+                    "date": 1674991947287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -158,14 +158,16 @@\n   try {\r\n     const formImage = req.files.profile;\r\n     const imagePath = formImage.tempFilePath;\r\n     if (\r\n-      formImage.mimetype == \"image/png\" ||formImage.mimetype == \"image/jpg\" ||\r\n+      formImage.mimetype == \"image/png\" ||\r\n+      formImage.mimetype == \"image/jpg\" ||\r\n       formImage.mimetype == \"image/jpeg\"\r\n     ) {\r\n       const _id = req.user._id;\r\n       const profile = await cloudinary.upload_image(imagePath, _id);\r\n       await User.updateOne({ _id }, { profile });\r\n+      \r\n       res.json(success(\"Profile Picture Changed\"));\r\n     } else {\r\n       res.json(failure(\"Must be png, jpg or jpeg\"));\r\n     }\r\n"
+                },
+                {
+                    "date": 1674991956474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -165,9 +165,13 @@\n     ) {\r\n       const _id = req.user._id;\r\n       const profile = await cloudinary.upload_image(imagePath, _id);\r\n       await User.updateOne({ _id }, { profile });\r\n-      \r\n+      res.status(200).json({\r\n+        success: true,\r\n+        message: \"Profile Picture Changed\",\r\n+        data: userData,\r\n+      });\r\n       res.json(success(\"Profile Picture Changed\"));\r\n     } else {\r\n       res.json(failure(\"Must be png, jpg or jpeg\"));\r\n     }\r\n"
+                },
+                {
+                    "date": 1674991974656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -168,12 +168,14 @@\n       await User.updateOne({ _id }, { profile });\r\n       res.status(200).json({\r\n         success: true,\r\n         message: \"Profile Picture Changed\",\r\n-        data: userData,\r\n       });\r\n-      res.json(success(\"Profile Picture Changed\"));\r\n     } else {\r\n+      return res.status(500).json({\r\n+        success: false,\r\n+        message: error.message,\r\n+      });\r\n       res.json(failure(\"Must be png, jpg or jpeg\"));\r\n     }\r\n   } catch (error) {\r\n     console.log(error);\r\n"
+                },
+                {
+                    "date": 1674991982606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -172,9 +172,9 @@\n       });\r\n     } else {\r\n       return res.status(500).json({\r\n         success: false,\r\n-        message: Must be png, jpg or jpeg,\r\n+        message: error.message,\r\n       });\r\n       res.json(failure(\"Must be png, jpg or jpeg\"));\r\n     }\r\n   } catch (error) {\r\n"
+                },
+                {
+                    "date": 1674993237436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import User from \"../model/user.js\";\r\n-const cloudinary = require(\"\")\r\n+const cloudinary = require(\"/\")\r\n \r\n // Register\r\n export const register = async (req, res) => {\r\n   try {\r\n"
+                }
+            ],
+            "date": 1672367616523,
+            "name": "Commit-0",
+            "content": "import User from \"../model/user.js\"\r\n\r\n// Register\r\nexport const register = async (req, res) => {\r\n    try {\r\n        const { email, phone, password } = req.body;\r\n        if (!email || !phone || !password) {\r\n            return res.status(400).json({\r\n                success: false,\r\n                message: \"Form are needed to fill!\",\r\n            });\r\n        }\r\n        if (password.length < 10) {\r\n            return res.status(400).json({\r\n                success: false,\r\n                message: \"Password must be 10 character!!\",\r\n            });\r\n        }\r\n        const exist = await User.findOne({ email });\r\n        if (exist) {\r\n            return res.status(400).json({\r\n                success: false,\r\n                message: \"User already exist!\",\r\n            });\r\n        }\r\n\r\n        const user = await User.create({\r\n            email,\r\n            phone,\r\n            password\r\n        });\r\n\r\n\r\n        res.status(200).json({\r\n            success: true,\r\n            message: 'Register Successfully',\r\n            data:user,\r\n        })\r\n    } catch (error) {\r\n        return res.status(500).json({\r\n            success: false,\r\n            message: error.message,\r\n        });\r\n    }\r\n}\r\n\r\n//login\r\nexport const login = async (req, res) => {\r\n    try {\r\n        const { email, password } = req.body;\r\n        if (!email || !password) {\r\n            return res.status(400).json({\r\n                success: false,\r\n                message:\"filled must be filled!\"\r\n            })\r\n        }\r\n\r\n        let user = await User.findOne({ email }).select(\"+password\")\r\n        if (!user) {\r\n            return res.status(400).json({\r\n                success: false,\r\n                message:\"User does not exist!\"\r\n            })\r\n        }\r\n\r\n        const isMatched = await user.comparePassword(password)\r\n        if (!isMatched) {\r\n              return res.status(400).json({\r\n                success: false,\r\n                message:\"Invalid credentials!\"\r\n            })\r\n            \r\n        }\r\n\r\n        const token = await user.getSignedJwtToken()\r\n        res.status(200).json({\r\n            success: true,\r\n            message: \"Login successfully!\",\r\n            user,\r\n            token\r\n        })\r\n        \r\n    } catch (error) {\r\n        return res.status(500).json({\r\n            success: false,\r\n            message: error.message,\r\n        });\r\n        \r\n    }\r\n}\r\n\r\n//single profile\r\nexport const singleProfile = async (req, res) => {\r\n    try {\r\n        user \r\n        \r\n    } catch (error) {\r\n          return res.status(500).json({\r\n            success: false,\r\n            message: error.message,\r\n        });\r\n        \r\n    }\r\n}\r\n"
+        }
+    ]
+}

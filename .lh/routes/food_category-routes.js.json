@@ -1,0 +1,154 @@
+{
+    "sourceFile": "routes/food_category-routes.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 34,
+            "patches": [
+                {
+                    "date": 1673600792873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1673600802001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import \n\\ No newline at end of file\n+import\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600811178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +0,0 @@\n-import\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600819208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,1 @@\n+import { Express } from \"express\";\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600824951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { Express } from \"express\";\n\\ No newline at end of file\n+import express  from \"express\";\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600833990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-import express  from \"express\";\n\\ No newline at end of file\n+import express from \"express\";\r\n+\r\n+import \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600841399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import express from \"express\";\r\n \r\n-import \n\\ No newline at end of file\n+import { AddDetails } from \"../controller/food_category_controller\";\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600871151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import express from \"express\";\r\n \r\n-import { AddDetails } from \"../controller/food_category_controller\";\n\\ No newline at end of file\n+import { AddCategory } from \"../controller/food_category_controller\";\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600941675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n import express from \"express\";\r\n \r\n-import { AddCategory } from \"../controller/food_category_controller\";\n\\ No newline at end of file\n+import { AddCategory } from \"../controller/food_category_controller\";\r\n+\r\n+\r\n"
+                },
+                {
+                    "date": 1673600951987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,4 +2,5 @@\n \r\n import { AddCategory } from \"../controller/food_category_controller\";\r\n \r\n \r\n+router \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600958260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,5 @@\n \r\n import { AddCategory } from \"../controller/food_category_controller\";\r\n \r\n \r\n-router \n\\ No newline at end of file\n+router.post('/')\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600963784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,5 @@\n \r\n import { AddCategory } from \"../controller/food_category_controller\";\r\n \r\n \r\n-router.post('/')\n\\ No newline at end of file\n+router.post('/add')\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600969888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,5 @@\n \r\n import { AddCategory } from \"../controller/food_category_controller\";\r\n \r\n \r\n-router.post('/add')\n\\ No newline at end of file\n+router.post('/add', add)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600977696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,5 @@\n \r\n import { AddCategory } from \"../controller/food_category_controller\";\r\n \r\n \r\n-router.post('/add', add)\n\\ No newline at end of file\n+router.post('/add', AddCategory)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600990724,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import express from \"express\";\r\n \r\n import { AddCategory } from \"../controller/food_category_controller\";\r\n \r\n-\r\n+const router = \r\n router.post('/add', AddCategory)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600996683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import express from \"express\";\r\n \r\n import { AddCategory } from \"../controller/food_category_controller\";\r\n \r\n-const router = \r\n+const router = express.Router()\r\n router.post('/add', AddCategory)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673601027868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import express from \"express\";\r\n \r\n import { AddCategory } from \"../controller/food_category_controller\";\r\n \r\n-const router = express.Router()\r\n-router.post('/add', AddCategory)\n\\ No newline at end of file\n+const router = express.Router();\r\n+router.post('/add', AddCategory)\r\n+\r\n+\r\n"
+                },
+                {
+                    "date": 1673601034898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,4 +5,5 @@\n const router = express.Router();\r\n router.post('/add', AddCategory)\r\n \r\n \r\n+export default \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673601125627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import express from \"express\";\r\n \r\n-import { AddCategory } from \"../controller/food_category_controller\";\r\n+import { AddCategory } from \"../controller/food_category_controller.js\";\r\n \r\n const router = express.Router();\r\n router.post('/add', AddCategory)\r\n \r\n \r\n\\ No newline at end of file\n-export default \n+export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673601184706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,7 @@\n \r\n import { AddCategory } from \"../controller/food_category_controller.js\";\r\n \r\n const router = express.Router();\r\n-router.post('/add', AddCategory)\r\n+router.post(\"/add\", AddCategory);\r\n \r\n-\r\n\\ No newline at end of file\n-export default router;\n+export default router;\r\n"
+                },
+                {
+                    "date": 1673601595773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import express from \"express\";\r\n \r\n import { AddCategory } from \"../controller/food_category_controller.js\";\r\n+imp\r\n \r\n const router = express.Router();\r\n router.post(\"/add\", AddCategory);\r\n \r\n"
+                },
+                {
+                    "date": 1673601604129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import express from \"express\";\r\n \r\n import { AddCategory } from \"../controller/food_category_controller.js\";\r\n-imp\r\n+import { authenticated } from \"../middleware/auth.js\";\r\n \r\n const router = express.Router();\r\n router.post(\"/add\", AddCategory);\r\n \r\n"
+                },
+                {
+                    "date": 1673601609627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n import { AddCategory } from \"../controller/food_category_controller.js\";\r\n import { authenticated } from \"../middleware/auth.js\";\r\n \r\n const router = express.Router();\r\n-router.post(\"/add\", AddCategory);\r\n+router.post(\"/add\",authenticated AddCategory);\r\n \r\n export default router;\r\n"
+                },
+                {
+                    "date": 1673602999086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n import express from \"express\";\r\n \r\n-import { AddCategory } from \"../controller/food_category_controller.js\";\r\n+import {\r\n+    AddCategory\r\n+} from \"../controller/food_category_controller.js\";\r\n import { authenticated } from \"../middleware/auth.js\";\r\n \r\n const router = express.Router();\r\n-router.post(\"/add\",authenticated AddCategory);\r\n+router.post(\"/add\", authenticated, AddCategory);\r\n \r\n export default router;\r\n"
+                },
+                {
+                    "date": 1673603006424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,13 @@\n import express from \"express\";\r\n \r\n import {\r\n-    AddCategory\r\n+    AddCategory,\r\n+    getCategory\r\n } from \"../controller/food_category_controller.js\";\r\n import { authenticated } from \"../middleware/auth.js\";\r\n \r\n const router = express.Router();\r\n router.post(\"/add\", authenticated, AddCategory);\r\n \r\n+\r\n export default router;\r\n"
+                },
+                {
+                    "date": 1673603011872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n import { authenticated } from \"../middleware/auth.js\";\r\n \r\n const router = express.Router();\r\n router.post(\"/add\", authenticated, AddCategory);\r\n+router.get()\r\n \r\n-\r\n export default router;\r\n"
+                },
+                {
+                    "date": 1673603018835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n import { authenticated } from \"../middleware/auth.js\";\r\n \r\n const router = express.Router();\r\n router.post(\"/add\", authenticated, AddCategory);\r\n-router.get()\r\n+router.get(\"/get\", )\r\n \r\n export default router;\r\n"
+                },
+                {
+                    "date": 1673603096366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,14 @@\n import express from \"express\";\r\n \r\n import {\r\n-    AddCategory,\r\n-    getCategory\r\n+  AddCategory,\r\n+  getCategory,\r\n } from \"../controller/food_category_controller.js\";\r\n import { authenticated } from \"../middleware/auth.js\";\r\n+import upload from \"../controller/file.js\";\r\n \r\n const router = express.Router();\r\n router.post(\"/add\", authenticated, AddCategory);\r\n-router.get(\"/get\", )\r\n+router.get(\"/get\", getCategory);\r\n \r\n export default router;\r\n"
+                },
+                {
+                    "date": 1673603104425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n import { authenticated } from \"../middleware/auth.js\";\r\n import upload from \"../controller/file.js\";\r\n \r\n const router = express.Router();\r\n-router.post(\"/add\", authenticated, AddCategory);\r\n+router.post(\"/add\", authenticated,\r\n+    AddCategory);\r\n router.get(\"/get\", getCategory);\r\n \r\n export default router;\r\n"
+                },
+                {
+                    "date": 1673603109810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n import upload from \"../controller/file.js\";\r\n \r\n const router = express.Router();\r\n router.post(\"/add\", authenticated,\r\n+    upload.\r\n     AddCategory);\r\n router.get(\"/get\", getCategory);\r\n \r\n export default router;\r\n"
+                },
+                {
+                    "date": 1673603120257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n import upload from \"../controller/file.js\";\r\n \r\n const router = express.Router();\r\n router.post(\"/add\", authenticated,\r\n-    upload.\r\n+    upload.single(\"foodImage\")\r\n     AddCategory);\r\n router.get(\"/get\", getCategory);\r\n \r\n export default router;\r\n"
+                },
+                {
+                    "date": 1673604276784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,15 @@\n import express from \"express\";\r\n \r\n import {\r\n   AddCategory,\r\n-  getCategory,\r\n+    getCategory,\r\n+  up\r\n } from \"../controller/food_category_controller.js\";\r\n import { authenticated } from \"../middleware/auth.js\";\r\n import upload from \"../controller/file.js\";\r\n \r\n const router = express.Router();\r\n-router.post(\"/add\", authenticated,\r\n-    upload.single(\"foodImage\")\r\n-    AddCategory);\r\n+router.post(\"/add\", authenticated, upload.single(\"foodImage\"), AddCategory);\r\n router.get(\"/get\", getCategory);\r\n \r\n export default router;\r\n"
+                },
+                {
+                    "date": 1673604282893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,15 @@\n \r\n import {\r\n   AddCategory,\r\n     getCategory,\r\n-  up\r\n+  UpdateCategory\r\n } from \"../controller/food_category_controller.js\";\r\n import { authenticated } from \"../middleware/auth.js\";\r\n import upload from \"../controller/file.js\";\r\n \r\n const router = express.Router();\r\n router.post(\"/add\", authenticated, upload.single(\"foodImage\"), AddCategory);\r\n router.get(\"/get\", getCategory);\r\n \r\n+\r\n export default router;\r\n"
+                },
+                {
+                    "date": 1673604288379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n \r\n const router = express.Router();\r\n router.post(\"/add\", authenticated, upload.single(\"foodImage\"), AddCategory);\r\n router.get(\"/get\", getCategory);\r\n-router.put\r\n+router.put()\r\n \r\n export default router;\r\n"
+                },
+                {
+                    "date": 1675314139499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,34 @@\n+import express from \"express\";\r\n+\r\n+import {\r\n+  AddCategory,\r\n+  deleteCategory,\r\n+  getCategory,\r\n+  UpdateCategory,\r\n+} from \"../controller/food_category_controller.js\";\r\n+import { authenticated, authorizeRoles } from \"../middleware/auth.js\";\r\n+import upload from \"../controller/file.js\";\r\n+\r\n+const router = express.Router();\r\n+router.post(\r\n+  \"/add\",\r\n+  authenticated,\r\n+  authorizeRoles(\"admin\"),\r\n+  upload.single(\"foodImage\"),\r\n+  AddCategory\r\n+);\r\n+router.get(\"/get\", authenticated, getCategory);\r\n+router.put(\r\n+  \"/update/:id\",\r\n+  authenticated,\r\n+  authorizeRoles(\"admin\"),\r\n+  UpdateCategory\r\n+);\r\n+router.delete(\r\n+  \"/category/delete/:id\",\r\n+  authenticated,\r\n+  authorizeRoles(\"admin\"),\r\n+  deleteCategory\r\n+);\r\n+\r\n+export default router;\r\n"
+                }
+            ],
+            "date": 1673600792873,
+            "name": "Commit-0",
+            "content": "import "
+        }
+    ]
+}

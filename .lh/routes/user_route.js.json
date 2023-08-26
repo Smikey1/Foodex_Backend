@@ -1,0 +1,238 @@
+{
+    "sourceFile": "routes/user_route.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 55,
+            "patches": [
+                {
+                    "date": 1672369302080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1672369309288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,8 @@\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n+router.get(\"/me\", singleUser);\r\n \r\n \r\n-\r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672369318565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,8 @@\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get(\"/me\", singleUser);\r\n+router.get(\"/profile\", singleUser);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672369329910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import express from \"express\";\r\n import {\r\n     login,\r\n-  register\r\n+  register,\r\n+  sin\r\n } from \"../controller/user_controller.js\";\r\n \r\n \r\n const router = express.Router();\r\n"
+                },
+                {
+                    "date": 1672369972486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,16 @@\n import express from \"express\";\r\n import {\r\n     login,\r\n   register,\r\n-  sin\r\n+  singleUser\r\n } from \"../controller/user_controller.js\";\r\n \r\n \r\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get(\"/profile\", singleUser);\r\n+router.get(\"/profile', singleUser);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672370407033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,13 @@\n   singleUser\r\n } from \"../controller/user_controller.js\";\r\n \r\n \r\n+\r\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get(\"/profile', singleUser);\r\n+router.get('/profile', singleUser);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672370417326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,15 +3,15 @@\n     login,\r\n   register,\r\n   singleUser\r\n } from \"../controller/user_controller.js\";\r\n+import { authenticated } from \"../middlewares/auth.js\";\r\n \r\n \r\n-\r\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get('/profile', singleUser);\r\n+router.get('/profile', au singleUser);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672370480893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,15 +3,15 @@\n     login,\r\n   register,\r\n   singleUser\r\n } from \"../controller/user_controller.js\";\r\n-import { authenticated } from \"../middlewares/auth.js\";\r\n+import { authenticated } from \"../middleware/auth.js\";\r\n \r\n \r\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get('/profile', au singleUser);\r\n+router.get('/profile', authenticated, singleUser);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672370494459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     login,\r\n   register,\r\n   singleUser\r\n } from \"../controller/user_controller.js\";\r\n-import { authenticated } from \"../middleware/auth.js\";\r\n+import { authenticated } from \"../\";\r\n \r\n \r\n const router = express.Router();\r\n \r\n"
+                },
+                {
+                    "date": 1672370500170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     login,\r\n   register,\r\n   singleUser\r\n } from \"../controller/user_controller.js\";\r\n-import { authenticated } from \"../\";\r\n+import { authenticated } from \"../middleware/auth.js\";\r\n \r\n \r\n const router = express.Router();\r\n \r\n"
+                },
+                {
+                    "date": 1672370643694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get('/profile', authenticated, singleUser);\r\n+router.get('/profile' singleUser);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672370649585,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get('/profile' singleUser);\r\n+router.get('/profile',singleUser);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672370657839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get('/profile',singleUser);\r\n+router.get('/profile', singleProfile);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672370680673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get('/profile', singleProfile);\r\n+router.get('/profile', user);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672370686334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,17 @@\n import express from \"express\";\r\n import {\r\n     login,\r\n   register,\r\n-  singleUser\r\n+  userProfile\r\n } from \"../controller/user_controller.js\";\r\n import { authenticated } from \"../middleware/auth.js\";\r\n \r\n \r\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get('/profile', user);\r\n+router.get('/profile', userProfile);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672371931916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get('/profile', userProfile);\r\n+router.get('/profile/', userProfile);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672371938164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get('/profile/', userProfile);\r\n+router.get('/profile/{}id', userProfile);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672371944081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get('/profile/{}id', userProfile);\r\n+router.get('/profile/{id}', userProfile);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672372021533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get('/profile/{id}', userProfile);\r\n+router.get('/profile/', userProfile);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672377467306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get('/profile/', userProfile);\r\n+router.get('/profile', userProfile);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672377517465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get('/profile', userProfile);\r\n+router.get('/uerprofile', userProfile);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672377523741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get('/uerprofile', userProfile);\r\n+router.get('/uer/profile', userProfile);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672377576325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get('/uer/profile', userProfile);\r\n+router.get('/user/profile', userProfile);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672377636054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get('/user/profile', userProfile);\r\n+router.get('/user/profile',authenticated, userProfile);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672377881524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     login,\r\n   register,\r\n   userProfile\r\n } from \"../controller/user_controller.js\";\r\n-import { authenticated } from \"../middleware/auth.js\";\r\n+import { authenticated, authorizeRoles } from \"../middleware/auth.js\";\r\n \r\n \r\n const router = express.Router();\r\n \r\n"
+                },
+                {
+                    "date": 1672377891399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     login,\r\n   register,\r\n   userProfile\r\n } from \"../controller/user_controller.js\";\r\n-import { authenticated, authorizeRoles } from \"../middleware/auth.js\";\r\n+import { authenticated } from \"../middleware/auth.js\";\r\n \r\n \r\n const router = express.Router();\r\n \r\n"
+                },
+                {
+                    "date": 1672584546048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,13 @@\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n-router.get('/user/profile',authenticated, userProfile);\r\n+router.get('/user/profile', authenticated, userProfile);\r\n+router.put(\r\n+  \"/update/profile\",\r\n+  authenticated,\r\n+  updateProfile\r\n+);\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672588411317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import express from \"express\";\r\n import {\r\n     login,\r\n   register,\r\n-  userProfile\r\n+  userProfile,\r\n+  updateProfile\r\n } from \"../controller/user_controller.js\";\r\n import { authenticated } from \"../middleware/auth.js\";\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1673578415073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,6 @@\n   updateProfile\r\n );\r\n \r\n \r\n+\r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673578423205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,8 @@\n   \"/update/profile\",\r\n   authenticated,\r\n   updateProfile\r\n );\r\n+router.delete('/')\r\n \r\n \r\n-\r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673578429926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,8 @@\n   \"/update/profile\",\r\n   authenticated,\r\n   updateProfile\r\n );\r\n-router.delete('/')\r\n+router.delete('/user/')\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673578444412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,8 @@\n   \"/update/profile\",\r\n   authenticated,\r\n   updateProfile\r\n );\r\n-router.delete('/user/')\r\n+router.delete('/user/delete', )\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673578451122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,8 @@\n   \"/update/profile\",\r\n   authenticated,\r\n   updateProfile\r\n );\r\n-router.delete('/user/delete', )\r\n+router.delete('/user/delete', authenticated, )\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673578460300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n import {\r\n     login,\r\n   register,\r\n   userProfile,\r\n-  updateProfile\r\n+  updateProfile,\r\n+  deleteProfile\r\n } from \"../controller/user_controller.js\";\r\n import { authenticated } from \"../middleware/auth.js\";\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1673598156799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n } from \"../controller/user_controller.js\";\r\n import { authenticated } from \"../middleware/auth.js\";\r\n \r\n \r\n+\r\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n@@ -18,8 +19,8 @@\n   \"/update/profile\",\r\n   authenticated,\r\n   updateProfile\r\n );\r\n-router.delete('/user/delete', authenticated, )\r\n+router.delete('/user/delete', authenticated, deleteProfile)\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673598165612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,11 +6,11 @@\n   updateProfile,\r\n   deleteProfile\r\n } from \"../controller/user_controller.js\";\r\n import { authenticated } from \"../middleware/auth.js\";\r\n+import upload from \"../controller/file.js\";\r\n \r\n \r\n-\r\n const router = express.Router();\r\n \r\n router.post('/register', register)\r\n router.post('/login', login)\r\n"
+                },
+                {
+                    "date": 1673598179218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n router.get('/user/profile', authenticated, userProfile);\r\n router.put(\r\n   \"/update/profile\",\r\n   authenticated,\r\n+  upload.\r\n   updateProfile\r\n );\r\n router.delete('/user/delete', authenticated, deleteProfile)\r\n \r\n"
+                },
+                {
+                    "date": 1673598186284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n router.get('/user/profile', authenticated, userProfile);\r\n router.put(\r\n   \"/update/profile\",\r\n   authenticated,\r\n-  upload.\r\n+  upload.single(\"avatar\")\r\n   updateProfile\r\n );\r\n router.delete('/user/delete', authenticated, deleteProfile)\r\n \r\n"
+                },
+                {
+                    "date": 1673619494078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,11 @@\n router.get('/user/profile', authenticated, userProfile);\r\n router.put(\r\n   \"/update/profile\",\r\n   authenticated,\r\n-  upload.single(\"avatar\")\r\n+  upload.single(\"avatar\"),\r\n   updateProfile\r\n );\r\n-router.delete('/user/delete', authenticated, deleteProfile)\r\n+router.delete('/user/delete', authenticated, authorizeRoles(\"admin\"), deleteProfile)\r\n \r\n \r\n export default router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673619494250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,27 +1,30 @@\n import express from \"express\";\r\n import {\r\n-    login,\r\n+  login,\r\n   register,\r\n   userProfile,\r\n   updateProfile,\r\n-  deleteProfile\r\n+  deleteProfile,\r\n } from \"../controller/user_controller.js\";\r\n import { authenticated } from \"../middleware/auth.js\";\r\n import upload from \"../controller/file.js\";\r\n \r\n-\r\n const router = express.Router();\r\n \r\n-router.post('/register', register)\r\n-router.post('/login', login)\r\n-router.get('/user/profile', authenticated, userProfile);\r\n+router.post(\"/register\", register);\r\n+router.post(\"/login\", login);\r\n+router.get(\"/user/profile\", authenticated, userProfile);\r\n router.put(\r\n   \"/update/profile\",\r\n   authenticated,\r\n   upload.single(\"avatar\"),\r\n   updateProfile\r\n\\ No newline at end of file\n );\r\n-router.delete('/user/delete', authenticated, authorizeRoles(\"admin\"), deleteProfile)\r\n+router.delete(\r\n+  \"/user/delete\",\r\n+  authenticated,\r\n+  authorizeRoles(\"admin\"),\r\n+  deleteProfile\r\n+);\r\n \r\n-\r\n-export default router;\n+export default router;\r\n"
+                },
+                {
+                    "date": 1673619520941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   userProfile,\r\n   updateProfile,\r\n   deleteProfile,\r\n } from \"../controller/user_controller.js\";\r\n-import { authenticated } from \"../middleware/auth.js\";\r\n+import { authenticated,  } from \"../middleware/auth.js\";\r\n import upload from \"../controller/file.js\";\r\n \r\n const router = express.Router();\r\n \r\n@@ -26,5 +26,5 @@\n   authorizeRoles(\"admin\"),\r\n   deleteProfile\r\n );\r\n \r\n-export default router;\n\\ No newline at end of file\n+export default router;\r\n"
+                },
+                {
+                    "date": 1673621129239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   userProfile,\r\n   updateProfile,\r\n   deleteProfile,\r\n } from \"../controller/user_controller.js\";\r\n-import { authenticated,  } from \"../middleware/auth.js\";\r\n+import { authenticated, authorizeRoles } from \"../middleware/auth.js\";\r\n import upload from \"../controller/file.js\";\r\n \r\n const router = express.Router();\r\n \r\n@@ -20,9 +20,9 @@\n   upload.single(\"avatar\"),\r\n   updateProfile\r\n );\r\n router.delete(\r\n-  \"/user/delete\",\r\n+  \"/user/delete/\",\r\n   authenticated,\r\n   authorizeRoles(\"admin\"),\r\n   deleteProfile\r\n );\r\n"
+                },
+                {
+                    "date": 1673621317568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   upload.single(\"avatar\"),\r\n   updateProfile\r\n );\r\n router.delete(\r\n-  \"/user/delete/\",\r\n+  \"/user/delete/:id\",\r\n   authenticated,\r\n   authorizeRoles(\"admin\"),\r\n   deleteProfile\r\n );\r\n"
+                },
+                {
+                    "date": 1674992755218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n   register,\r\n   userProfile,\r\n   updateProfile,\r\n   deleteProfile,\r\n+  \r\n } from \"../controller/user_controller.js\";\r\n import { authenticated, authorizeRoles } from \"../middleware/auth.js\";\r\n import upload from \"../controller/file.js\";\r\n \r\n"
+                },
+                {
+                    "date": 1674992771441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   register,\r\n   userProfile,\r\n   updateProfile,\r\n   deleteProfile,\r\n-  \r\n+  update_profile_picture,\r\n } from \"../controller/user_controller.js\";\r\n import { authenticated, authorizeRoles } from \"../middleware/auth.js\";\r\n import upload from \"../controller/file.js\";\r\n \r\n@@ -20,8 +20,9 @@\n   authenticated,\r\n   upload.single(\"avatar\"),\r\n   updateProfile\r\n );\r\n+\r\n router.delete(\r\n   \"/user/delete/:id\",\r\n   authenticated,\r\n   authorizeRoles(\"admin\"),\r\n"
+                },
+                {
+                    "date": 1674992809869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   authenticated,\r\n   upload.single(\"avatar\"),\r\n   updateProfile\r\n );\r\n-\r\n+router\r\n router.delete(\r\n   \"/user/delete/:id\",\r\n   authenticated,\r\n   authorizeRoles(\"admin\"),\r\n"
+                },
+                {
+                    "date": 1674992818000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   authenticated,\r\n   upload.single(\"avatar\"),\r\n   updateProfile\r\n );\r\n-router\r\n+router.put()\r\n router.delete(\r\n   \"/user/delete/:id\",\r\n   authenticated,\r\n   authorizeRoles(\"admin\"),\r\n"
+                },
+                {
+                    "date": 1674992824606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   authenticated,\r\n   upload.single(\"avatar\"),\r\n   updateProfile\r\n );\r\n-router.put()\r\n+router.pa\r\n router.delete(\r\n   \"/user/delete/:id\",\r\n   authenticated,\r\n   authorizeRoles(\"admin\"),\r\n"
+                },
+                {
+                    "date": 1674992834998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   authenticated,\r\n   upload.single(\"avatar\"),\r\n   updateProfile\r\n );\r\n-router.pa\r\n+router.patch(\"/\")\r\n router.delete(\r\n   \"/user/delete/:id\",\r\n   authenticated,\r\n   authorizeRoles(\"admin\"),\r\n"
+                },
+                {
+                    "date": 1674992843023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   authenticated,\r\n   upload.single(\"avatar\"),\r\n   updateProfile\r\n );\r\n-router.patch(\"/\")\r\n+router.patch(\"/profile-\")\r\n router.delete(\r\n   \"/user/delete/:id\",\r\n   authenticated,\r\n   authorizeRoles(\"admin\"),\r\n"
+                },
+                {
+                    "date": 1674992849648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   authenticated,\r\n   upload.single(\"avatar\"),\r\n   updateProfile\r\n );\r\n-router.patch(\"/profile-\")\r\n+router.patch(\"/profile-picture\", )\r\n router.delete(\r\n   \"/user/delete/:id\",\r\n   authenticated,\r\n   authorizeRoles(\"admin\"),\r\n"
+                },
+                {
+                    "date": 1674992855287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   authenticated,\r\n   upload.single(\"avatar\"),\r\n   updateProfile\r\n );\r\n-router.patch(\"/profile-picture\", )\r\n+router.patch(\"/profile-picture\", authenticated)\r\n router.delete(\r\n   \"/user/delete/:id\",\r\n   authenticated,\r\n   authorizeRoles(\"admin\"),\r\n"
+                },
+                {
+                    "date": 1674992860640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   authenticated,\r\n   upload.single(\"avatar\"),\r\n   updateProfile\r\n );\r\n-router.patch(\"/profile-picture\", authenticated)\r\n+router.patch(\"/profile-picture\", authenticated, update_profile_picture)\r\n router.delete(\r\n   \"/user/delete/:id\",\r\n   authenticated,\r\n   authorizeRoles(\"admin\"),\r\n"
+                },
+                {
+                    "date": 1674992872297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,10 @@\n   authenticated,\r\n   upload.single(\"avatar\"),\r\n   updateProfile\r\n );\r\n-router.patch(\"/profile-picture\", authenticated, update_profile_picture)\r\n+router.patch(\"/profile-picture\", authenticated, update_profile_picture);\r\n+\r\n router.delete(\r\n   \"/user/delete/:id\",\r\n   authenticated,\r\n   authorizeRoles(\"admin\"),\r\n"
+                },
+                {
+                    "date": 1674993051281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,15 +13,16 @@\n const router = express.Router();\r\n \r\n router.post(\"/register\", register);\r\n router.post(\"/login\", login);\r\n-router.get(\"/user/profile\", authenticated, userProfile);\r\n+router.get(\"/profile\", authenticated, userProfile);\r\n router.put(\r\n   \"/update/profile\",\r\n   authenticated,\r\n   upload.single(\"avatar\"),\r\n   updateProfile\r\n );\r\n+\r\n router.patch(\"/profile-picture\", authenticated, update_profile_picture);\r\n \r\n router.delete(\r\n   \"/user/delete/:id\",\r\n"
+                },
+                {
+                    "date": 1674993144495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n   upload.single(\"avatar\"),\r\n   updateProfile\r\n );\r\n \r\n-router.patch(\"/profile-picture\", authenticated, update_profile_picture);\r\n+router.put(\"/profile-picture\", authenticated, update_profile_picture);\r\n \r\n router.delete(\r\n   \"/user/delete/:id\",\r\n   authenticated,\r\n"
+                }
+            ],
+            "date": 1672369302080,
+            "name": "Commit-0",
+            "content": "import express from \"express\";\r\nimport {\r\n    login,\r\n  register\r\n} from \"../controller/user_controller.js\";\r\n\r\n\r\nconst router = express.Router();\r\n\r\nrouter.post('/register', register)\r\nrouter.post('/login', login)\r\n\r\n\r\n\r\nexport default router;"
+        }
+    ]
+}

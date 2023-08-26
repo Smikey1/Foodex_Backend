@@ -1,0 +1,30 @@
+{
+    "sourceFile": "controller/reviewController.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1674992237555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1674992251114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const Recipe = require(\"../models/Recipe.js\")\r\n const Review = require(\"../models/Review.js\")\r\n const AvgRating = require(\"../utils/calculateAvgRating.js\")\r\n- createNotification = require(\"../utils/createNotification.js\")\r\n+const createNotification = require(\"../utils/createNotification.js\")\r\n const { success, failure } = require(\"../utils/message.js\")\r\n \r\n exports.get_review_by_recipe_id = async function (req, res) {\r\n     try {\r\n"
+                },
+                {
+                    "date": 1674992324887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,10 @@\n const Recipe = require(\"../models/Recipe.js\")\r\n const Review = require(\"../models/Review.js\")\r\n const AvgRating = require(\"../utils/calculateAvgRating.js\")\r\n const createNotification = require(\"../utils/createNotification.js\")\r\n-const { success, failure } = require(\"../utils/message.js\")\r\n \r\n-exports.get_review_by_recipe_id = async function (req, res) {\r\n+exports const get_review_by_recipe_id = async function (req, res) {\r\n     try {\r\n         // Populate User\r\n         const recipeReviews = await Review.find({ recipe: req.params.recipeId }).populate({\r\n             path: 'user',\r\n"
+                },
+                {
+                    "date": 1674992343083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n const Review = require(\"../models/Review.js\")\r\n const AvgRating = require(\"../utils/calculateAvgRating.js\")\r\n const createNotification = require(\"../utils/createNotification.js\")\r\n \r\n-exports const get_review_by_recipe_id = async function (req, res) {\r\n+exports.get_review_by_recipe_id = async function (req, res) {\r\n     try {\r\n         // Populate User\r\n         const recipeReviews = await Review.find({ recipe: req.params.recipeId }).populate({\r\n             path: 'user',\r\n"
+                }
+            ],
+            "date": 1674992237555,
+            "name": "Commit-0",
+            "content": "const Recipe = require(\"../models/Recipe.js\")\r\nconst Review = require(\"../models/Review.js\")\r\nconst AvgRating = require(\"../utils/calculateAvgRating.js\")\r\n createNotification = require(\"../utils/createNotification.js\")\r\nconst { success, failure } = require(\"../utils/message.js\")\r\n\r\nexports.get_review_by_recipe_id = async function (req, res) {\r\n    try {\r\n        // Populate User\r\n        const recipeReviews = await Review.find({ recipe: req.params.recipeId }).populate({\r\n            path: 'user',\r\n            select: 'firstname _id profile'\r\n        }).select(\"-recipe\")\r\n        res.json(success(\"Reviews Successful\", recipeReviews))\r\n    }\r\n    catch (e) {\r\n        console.log(e)\r\n        res.json(failure())\r\n    }\r\n    res.end()\r\n}\r\n\r\nexports.insert_new_review = async function (req, res) {\r\n    try {\r\n        const _id = req.user._id\r\n        const recipeId = req.params.recipeId\r\n        const review = new Review({\r\n            user: _id,\r\n            recipe: recipeId,\r\n            review: req.body.review,\r\n            rating: req.body.rating\r\n        })\r\n        await review.save()\r\n        AvgRating(req.params.recipeId)\r\n        res.json(success(\"New Review Added\"))\r\n        const recipe = await Recipe.findById(recipeId)\r\n        createNotification(recipe.user, review.user, \"reviewed on your recipe.\", \"recipe\", recipeId )\r\n    }\r\n    catch (e) {\r\n        console.log(e)\r\n        res.json(failure())\r\n    }\r\n    res.end()\r\n}\r\n\r\nexports.update_review = async function (req, res) {\r\n    try {\r\n        await Review.updateOne({ _id: req.body._id, user: req.user._id }, {\r\n            review: req.body.review,\r\n            rating: req.body.rating\r\n        })\r\n        AvgRating(req.params.recipeId)\r\n        res.json(success(\"Review Updated\"))\r\n    }\r\n    catch (e) {\r\n        console.log(e)\r\n        res.json(failure())\r\n    }\r\n    res.end()\r\n}\r\n\r\nexports.delete_review = async function (req, res) {\r\n    try {\r\n        await Review.deleteOne({ _id: req.params.reviewId, user: req.user._id })\r\n        AvgRating(req.params.recipeId)\r\n        res.json(success(\"Review Deleted\"))\r\n    }\r\n    catch (e) {\r\n        console.log(e)\r\n        res.json(failure())\r\n    }\r\n    res.end()\r\n}"
+        }
+    ]
+}

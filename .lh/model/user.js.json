@@ -1,0 +1,110 @@
+{
+    "sourceFile": "model/user.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 23,
+            "patches": [
+                {
+                    "date": 1672378052809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1672588610623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,19 +5,19 @@\n const userSchema = new mongoose.Schema(\r\n     {\r\n         fullName: {\r\n             type: String,\r\n-            required: [true, \"Please enter your email\"],\r\n+            required: [false, \"Please enter your email\"],\r\n             \r\n-        },\r\n+        }, \r\n           email: {\r\n             type: String,\r\n             required: [true, \"Please enter your email\"],\r\n             unique: true,\r\n         },\r\n         dob: {\r\n             type: String,\r\n-            required: [true, \"Please enter your dob\"],\r\n+            required: [false, \"Please enter your dob\"],\r\n             \r\n           },\r\n         phone: {\r\n             type: Number,\r\n"
+                },
+                {
+                    "date": 1672589071751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const userSchema = new mongoose.Schema(\r\n     {\r\n         fullName: {\r\n             type: String,\r\n-            required: [false, \"Please enter your email\"],\r\n+            // required: [false, \"Please enter your email\"],\r\n             \r\n         }, \r\n           email: {\r\n             type: String,\r\n@@ -15,9 +15,9 @@\n             unique: true,\r\n         },\r\n         dob: {\r\n             type: String,\r\n-            required: [false, \"Please enter your dob\"],\r\n+            // required: [false, \"Please enter your dob\"],\r\n             \r\n           },\r\n         phone: {\r\n             type: Number,\r\n"
+                },
+                {
+                    "date": 1672589281341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const userSchema = new mongoose.Schema(\r\n     {\r\n         fullName: {\r\n             type: String,\r\n-            // required: [false, \"Please enter your email\"],\r\n+            required: [false, \"Please enter your email\"],\r\n             \r\n         }, \r\n           email: {\r\n             type: String,\r\n"
+                },
+                {
+                    "date": 1672589484660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n             unique: true,\r\n         },\r\n         dob: {\r\n             type: String,\r\n-            // required: [false, \"Please enter your dob\"],\r\n+            required: [false, \"Please enter your dob\"],\r\n             \r\n           },\r\n         phone: {\r\n             type: Number,\r\n"
+                },
+                {
+                    "date": 1672589779715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,10 @@\n const userSchema = new mongoose.Schema(\r\n     {\r\n         fullName: {\r\n             type: String,\r\n-            required: [false, \"Please enter your email\"],\r\n+            // required: [false, \"Please enter your email\"],\r\n+            nullable : true\r\n             \r\n         }, \r\n           email: {\r\n             type: String,\r\n@@ -15,9 +16,10 @@\n             unique: true,\r\n         },\r\n         dob: {\r\n             type: String,\r\n-            required: [false, \"Please enter your dob\"],\r\n+            // required: [false, \"Please enter your dob\"],\r\n+             nullable : true\r\n             \r\n           },\r\n         phone: {\r\n             type: Number,\r\n"
+                },
+                {
+                    "date": 1672589894457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n const userSchema = new mongoose.Schema(\r\n     {\r\n         fullName: {\r\n             type: String,\r\n-            // required: [false, \"Please enter your email\"],\r\n-            nullable : true\r\n+            required: [true, \"Please enter your email\"],\r\n+            // nullable : true\r\n             \r\n         }, \r\n           email: {\r\n             type: String,\r\n"
+                },
+                {
+                    "date": 1672589971015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n const userSchema = new mongoose.Schema(\r\n     {\r\n         fullName: {\r\n             type: String,\r\n-            required: [true, \"Please enter your email\"],\r\n-            // nullable : true\r\n+            // required: [true, \"Please enter your email\"],\r\n+            nullable : true\r\n             \r\n         }, \r\n           email: {\r\n             type: String,\r\n"
+                },
+                {
+                    "date": 1673107565884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         },\r\n         password: {\r\n             type: String,\r\n             required: [true, \"Enter the your password\"],\r\n-            maxLength: [10, \"Password must be at least 8 characters\"],\r\n+            maxLength: [, \"Password must be at least 8 characters\"],\r\n             select: false,\r\n         },\r\n \r\n         role: {\r\n"
+                },
+                {
+                    "date": 1673597804704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,11 +28,12 @@\n         },\r\n         password: {\r\n             type: String,\r\n             required: [true, \"Enter the your password\"],\r\n-            maxLength: [, \"Password must be at least 8 characters\"],\r\n+            maxLength: [8, \"Password must be at least 8 characters\"],\r\n             select: false,\r\n         },\r\n+        \r\n \r\n         role: {\r\n             type: String,\r\n             enum: ['Admin', 'User',],\r\n"
+                },
+                {
+                    "date": 1673597813254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n             required: [true, \"Enter the your password\"],\r\n             maxLength: [8, \"Password must be at least 8 characters\"],\r\n             select: false,\r\n         },\r\n-        \r\n+        avatar\r\n \r\n         role: {\r\n             type: String,\r\n             enum: ['Admin', 'User',],\r\n"
+                },
+                {
+                    "date": 1673597818350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,11 @@\n             required: [true, \"Enter the your password\"],\r\n             maxLength: [8, \"Password must be at least 8 characters\"],\r\n             select: false,\r\n         },\r\n-        avatar\r\n+        avatar: {\r\n+            \r\n+        }\r\n \r\n         role: {\r\n             type: String,\r\n             enum: ['Admin', 'User',],\r\n"
+                },
+                {
+                    "date": 1673597830609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,11 +32,12 @@\n             maxLength: [8, \"Password must be at least 8 characters\"],\r\n             select: false,\r\n         },\r\n         avatar: {\r\n-            \r\n-        }\r\n+            type: String\r\n \r\n+        },\r\n+\r\n         role: {\r\n             type: String,\r\n             enum: ['Admin', 'User',],\r\n             default: \"User\",\r\n"
+                },
+                {
+                    "date": 1673597849933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,10 +32,9 @@\n             maxLength: [8, \"Password must be at least 8 characters\"],\r\n             select: false,\r\n         },\r\n         avatar: {\r\n-            type: String\r\n-\r\n+            type: String,\r\n         },\r\n \r\n         role: {\r\n             type: String,\r\n"
+                },
+                {
+                    "date": 1673598953757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         },\r\n         password: {\r\n             type: String,\r\n             required: [true, \"Enter the your password\"],\r\n-            maxLength: [8, \"Password must be at least 8 characters\"],\r\n+            maxLength: [1, \"Password must be at least 8 characters\"],\r\n             select: false,\r\n         },\r\n         avatar: {\r\n             type: String,\r\n"
+                },
+                {
+                    "date": 1673598959938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         },\r\n         password: {\r\n             type: String,\r\n             required: [true, \"Enter the your password\"],\r\n-            maxLength: [1, \"Password must be at least 8 characters\"],\r\n+            minLength: [8, \"Password must be at least 8 characters\"],\r\n             select: false,\r\n         },\r\n         avatar: {\r\n             type: String,\r\n"
+                },
+                {
+                    "date": 1673599530955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,53 +1,51 @@\n import mongoose from \"mongoose\";\r\n import bcrypt from \"bcryptjs\";\r\n-import jwt from \"jsonwebtoken\"\r\n+import jwt from \"jsonwebtoken\";\r\n \r\n-const userSchema = new mongoose.Schema(\r\n-    {\r\n-        fullName: {\r\n-            type: String,\r\n-            // required: [true, \"Please enter your email\"],\r\n-            nullable : true\r\n-            \r\n-        }, \r\n-          email: {\r\n-            type: String,\r\n-            required: [true, \"Please enter your email\"],\r\n-            unique: true,\r\n-        },\r\n-        dob: {\r\n-            type: String,\r\n-            // required: [false, \"Please enter your dob\"],\r\n-             nullable : true\r\n-            \r\n-          },\r\n-        phone: {\r\n-            type: Number,\r\n-            required: [true, \"Please enter your phone number\"],\r\n-            maxLength: [10, \"Number must be only 10 digits\"]\r\n-        },\r\n-        password: {\r\n-            type: String,\r\n-            required: [true, \"Enter the your password\"],\r\n-            minLength: [8, \"Password must be at least 8 characters\"],\r\n-            select: false,\r\n-        },\r\n-        avatar: {\r\n-            type: String,\r\n-        },\r\n+const userSchema = new mongoose.Schema({\r\n+  fullName: {\r\n+    type: String,\r\n+    // required: [true, \"Please enter your email\"],\r\n+    nullable: true,\r\n+  },\r\n+  email: {\r\n+    type: String,\r\n+    required: [true, \"Please enter your email\"],\r\n+    unique: true,\r\n+  },\r\n+  dob: {\r\n+    type: String,\r\n+    // required: [false, \"Please enter your dob\"],\r\n+    nullable: true,\r\n+  },\r\n+  phone: {\r\n+    type: Number,\r\n+    unique: true,\r\n+    required: [true, \"Please enter your phone number\"],\r\n+    maxLength: [10, \"Number must be only 10 digits\"],\r\n+  },\r\n+  password: {\r\n+    type: String,\r\n+    required: [true, \"Enter the your password\"],\r\n+    minLength: [8, \"Password must be at least 8 characters\"],\r\n+    select: false,\r\n+  },\r\n+  avatar: {\r\n+    type: String,\r\n+  },\r\n \r\n-        role: {\r\n-            type: String,\r\n-            enum: ['Admin', 'User',],\r\n-            default: \"User\",\r\n-        },\r\n+  role: {\r\n+    type: String,\r\n+    enum: [\"Admin\", \"User\"],\r\n+    default: \"User\",\r\n+  },\r\n \r\n-        createAt: {\r\n-            type: Date,\r\n-            default: Date.now(),\r\n-        },\r\n-    });\r\n+  createAt: {\r\n+    type: Date,\r\n+    default: Date.now(),\r\n+  },\r\n+});\r\n \r\n userSchema.pre(\"save\", async function (next) {\r\n   if (!this.isModified(\"password\")) {\r\n     next();\r\n@@ -57,14 +55,14 @@\n   this.password = await bcrypt.hash(this.password, salt);\r\n });\r\n \r\n userSchema.methods.comparePassword = async function (enteredPassword) {\r\n-    return await bcrypt.compare(enteredPassword,this.password)\r\n-}\r\n+  return await bcrypt.compare(enteredPassword, this.password);\r\n+};\r\n \r\n userSchema.methods.getSignedJwtToken = function () {\r\n-    return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {\r\n-        expiresIn:\"1d\"\r\n-    })\r\n-}\r\n-    \r\n+  return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {\r\n+    expiresIn: \"1d\",\r\n+  });\r\n+};\r\n+\r\n export default mongoose.model(\"User\", userSchema);\r\n"
+                },
+                {
+                    "date": 1673599985393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n   },\r\n \r\n   role: {\r\n     type: String,\r\n-    enum: [\"Admin\", \"User\"],\r\n+    // enum: [\"Admin\", \"User\"],\r\n     default: \"User\",\r\n   },\r\n \r\n   createAt: {\r\n"
+                },
+                {
+                    "date": 1673600058527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n   },\r\n \r\n   role: {\r\n     type: String,\r\n-    // enum: [\"Admin\", \"User\"],\r\n+    enum: [\"Admin\", \"User\"],\r\n     default: \"User\",\r\n   },\r\n \r\n   createAt: {\r\n"
+                },
+                {
+                    "date": 1673602405207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n   },\r\n \r\n   role: {\r\n     type: String,\r\n-    enum: [\"Admin\", \"User\"],\r\n+    // enum: [\"Admin\", \"User\"],\r\n     default: \"User\",\r\n   },\r\n \r\n   createAt: {\r\n"
+                },
+                {
+                    "date": 1673608258000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \r\n   role: {\r\n     type: String,\r\n     // enum: [\"Admin\", \"User\"],\r\n-    default: \"User\",\r\n+    // default: \"User\",\r\n   },\r\n \r\n   createAt: {\r\n     type: Date,\r\n"
+                },
+                {
+                    "date": 1673608267924,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n   },\r\n \r\n   role: {\r\n     type: String,\r\n-    // enum: [\"Admin\", \"User\"],\r\n+    enum: [\"Admin\", \"User\"],\r\n     // default: \"User\",\r\n   },\r\n \r\n   createAt: {\r\n"
+                },
+                {
+                    "date": 1673608357169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \r\n   role: {\r\n     type: String,\r\n     enum: [\"Admin\", \"User\"],\r\n-    // default: \"User\",\r\n+    default: \"User\",\r\n   },\r\n \r\n   createAt: {\r\n     type: Date,\r\n"
+                },
+                {
+                    "date": 1673611295843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,8 @@\n   },\r\n \r\n   role: {\r\n     type: String,\r\n-    enum: [\"Admin\", \"User\"],\r\n     default: \"User\",\r\n   },\r\n \r\n   createAt: {\r\n"
+                }
+            ],
+            "date": 1672378052809,
+            "name": "Commit-0",
+            "content": "import mongoose from \"mongoose\";\r\nimport bcrypt from \"bcryptjs\";\r\nimport jwt from \"jsonwebtoken\"\r\n\r\nconst userSchema = new mongoose.Schema(\r\n    {\r\n        fullName: {\r\n            type: String,\r\n            required: [true, \"Please enter your email\"],\r\n            \r\n        },\r\n          email: {\r\n            type: String,\r\n            required: [true, \"Please enter your email\"],\r\n            unique: true,\r\n        },\r\n        dob: {\r\n            type: String,\r\n            required: [true, \"Please enter your dob\"],\r\n            \r\n          },\r\n        phone: {\r\n            type: Number,\r\n            required: [true, \"Please enter your phone number\"],\r\n            maxLength: [10, \"Number must be only 10 digits\"]\r\n        },\r\n        password: {\r\n            type: String,\r\n            required: [true, \"Enter the your password\"],\r\n            maxLength: [10, \"Password must be at least 8 characters\"],\r\n            select: false,\r\n        },\r\n\r\n        role: {\r\n            type: String,\r\n            enum: ['Admin', 'User',],\r\n            default: \"User\",\r\n        },\r\n\r\n        createAt: {\r\n            type: Date,\r\n            default: Date.now(),\r\n        },\r\n    });\r\n\r\nuserSchema.pre(\"save\", async function (next) {\r\n  if (!this.isModified(\"password\")) {\r\n    next();\r\n  }\r\n\r\n  const salt = await bcrypt.genSalt(10);\r\n  this.password = await bcrypt.hash(this.password, salt);\r\n});\r\n\r\nuserSchema.methods.comparePassword = async function (enteredPassword) {\r\n    return await bcrypt.compare(enteredPassword,this.password)\r\n}\r\n\r\nuserSchema.methods.getSignedJwtToken = function () {\r\n    return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {\r\n        expiresIn:\"1d\"\r\n    })\r\n}\r\n    \r\nexport default mongoose.model(\"User\", userSchema);\r\n"
+        }
+    ]
+}

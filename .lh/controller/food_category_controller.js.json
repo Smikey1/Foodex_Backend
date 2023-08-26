@@ -1,0 +1,62 @@
+{
+    "sourceFile": "controller/food_category_controller.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1673600415179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1673600421370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,7 @@\n+\r\n+\r\n+\r\n export const AddDetails = async (req, res) => {\r\n   try {\r\n     const { foodTitle, foodDescription } = req.body;\r\n     if (!foodTitle || !foodDescription) {\r\n"
+                },
+                {
+                    "date": 1673600428715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n \r\n export const AddDetails = async (req, res) => {\r\n   try {\r\n-    const { foodTitle, foodDescription } = req.body;\r\n+    const { Title, foodDescription } = req.body;\r\n     if (!foodTitle || !foodDescription) {\r\n       return res.status(400).json({\r\n         success: false,\r\n         message: \"Filled can't be empty!\",\r\n"
+                },
+                {
+                    "date": 1673600436565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n \r\n export const AddDetails = async (req, res) => {\r\n   try {\r\n-    const { Title, foodDescription } = req.body;\r\n+    const { Title } = req.body;\r\n     if (!foodTitle || !foodDescription) {\r\n       return res.status(400).json({\r\n         success: false,\r\n         message: \"Filled can't be empty!\",\r\n"
+                },
+                {
+                    "date": 1673600465485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n         success: false,\r\n         message: \"Filled can't be empty!\",\r\n       });\r\n     }\r\n-    const foodImage = req.file.filename;\r\n+    const Image = req.file.filename;\r\n \r\n     const exist = await Food.findOne({ foodTitle });\r\n     if (exist) {\r\n       return res.status(400).json({\r\n"
+                },
+                {
+                    "date": 1673600479708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \r\n     const food = await Food.create({\r\n       foodTitle,\r\n       foodDescription,\r\n-      foodImage: foodImage,\r\n+      foodImage: Image,\r\n     });\r\n \r\n     res.status(200).json({\r\n       success: true,\r\n"
+                },
+                {
+                    "date": 1673600495828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       });\r\n     }\r\n     const Image = req.file.filename;\r\n \r\n-    const exist = await Food.findOne({ foodTitle });\r\n+    const exist = await Food.findOne({ Title });\r\n     if (exist) {\r\n       return res.status(400).json({\r\n         success: false,\r\n         message: \"Name must be different!\",\r\n"
+                },
+                {
+                    "date": 1673600516535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n+import \r\n \r\n \r\n-\r\n export const AddDetails = async (req, res) => {\r\n   try {\r\n     const { Title } = req.body;\r\n     if (!foodTitle || !foodDescription) {\r\n"
+                },
+                {
+                    "date": 1673600533613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n-import \r\n+import foodCatagory from \"../model/food-catagory\";\r\n \r\n \r\n export const AddDetails = async (req, res) => {\r\n   try {\r\n     const { Title } = req.body;\r\n-    if (!foodTitle || !foodDescription) {\r\n+    if (!foodTitle) {\r\n       return res.status(400).json({\r\n         success: false,\r\n         message: \"Filled can't be empty!\",\r\n       });\r\n"
+                },
+                {
+                    "date": 1673600559063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n export const AddDetails = async (req, res) => {\r\n   try {\r\n     const { Title } = req.body;\r\n-    if (!foodTitle) {\r\n+    if (!Title) {\r\n       return res.status(400).json({\r\n         success: false,\r\n         message: \"Filled can't be empty!\",\r\n       });\r\n@@ -19,9 +19,9 @@\n         message: \"Name must be different!\",\r\n       });\r\n     }\r\n \r\n-    const food = await Food.create({\r\n+    const foodCatagory = await Food.create({\r\n       foodTitle,\r\n       foodDescription,\r\n       foodImage: Image,\r\n     });\r\n"
+                },
+                {
+                    "date": 1673600633346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import oodCatagory from \"../model/food-catagory\";\r\n+import FoodCatagory from \"../model/food-catagory\";\r\n \r\n \r\n export const AddDetails = async (req, res) => {\r\n   try {\r\n"
+                },
+                {
+                    "date": 1673600730926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     }\r\n \r\n     const food_Category = await Food_Category.create({\r\n       Title,\r\n-      \r\n+\r\n       foodImage: Image,\r\n     });\r\n \r\n     res.status(200).json({\r\n"
+                }
+            ],
+            "date": 1673600415179,
+            "name": "Commit-0",
+            "content": "export const AddDetails = async (req, res) => {\r\n  try {\r\n    const { foodTitle, foodDescription } = req.body;\r\n    if (!foodTitle || !foodDescription) {\r\n      return res.status(400).json({\r\n        success: false,\r\n        message: \"Filled can't be empty!\",\r\n      });\r\n    }\r\n    const foodImage = req.file.filename;\r\n\r\n    const exist = await Food.findOne({ foodTitle });\r\n    if (exist) {\r\n      return res.status(400).json({\r\n        success: false,\r\n        message: \"Name must be different!\",\r\n      });\r\n    }\r\n\r\n    const food = await Food.create({\r\n      foodTitle,\r\n      foodDescription,\r\n      foodImage: foodImage,\r\n    });\r\n\r\n    res.status(200).json({\r\n      success: true,\r\n      message: \"Food added Successfully!\",\r\n      data: food,\r\n    });\r\n  } catch (error) {\r\n    return res.status(500).json({\r\n      success: false,\r\n      message: error.message,\r\n    });\r\n  }\r\n};\r\n"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "sourceFile": "middleware/auth.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1672370350221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1672370526878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import User from \"../models/user.js\";\r\n+import User from \"../\";\r\n import jwt from \"jsonwebtoken\";\r\n \r\n export const authenticated = async (req, res, next) => {\r\n   try {\r\n"
+                },
+                {
+                    "date": 1672370534098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import User from \"../\";\r\n+import User from \"../model/user.js\";\r\n import jwt from \"jsonwebtoken\";\r\n \r\n export const authenticated = async (req, res, next) => {\r\n   try {\r\n"
+                },
+                {
+                    "date": 1673111853511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n         message: \"session expired!\",\r\n       });\r\n     }\r\n     next();\r\n+    \r\n   } catch (error) {\r\n     console.log(error);\r\n     return res.status(500).json({\r\n       success: false,\r\n"
+                }
+            ],
+            "date": 1672370350221,
+            "name": "Commit-0",
+            "content": "import User from \"../models/user.js\";\r\nimport jwt from \"jsonwebtoken\";\r\n\r\nexport const authenticated = async (req, res, next) => {\r\n  try {\r\n    let token = \"\";\r\n    token = token ? token : req?.headers?.authorization;\r\n    token = token?.replace(\"Bearer \", \"\");\r\n    if (!token) {\r\n      return res.status(401).json({\r\n        success: false,\r\n        message: \"Please login first!\",\r\n      });\r\n    }\r\n\r\n    const decoded = await jwt.verify(token, process.env.JWT_SECRET);\r\n    req.user = await User.findById(decoded.id);\r\n    if (req.user === null) {\r\n      return res.status(401).json({\r\n        success: false,\r\n        message: \"session expired!\",\r\n      });\r\n    }\r\n    next();\r\n  } catch (error) {\r\n    console.log(error);\r\n    return res.status(500).json({\r\n      success: false,\r\n      message: error.message,\r\n    });\r\n  }\r\n};\r\n\r\n//for admin role\r\nexport const authorizeRoles = (...roles) => {\r\n  return (req, res, next) => {\r\n    if (!roles.includes(req.user.role)) {\r\n      return res.status(401).json({\r\n        success: false,\r\n        message: ` ${req.user.role} is not allowed to access this resource`,\r\n      });\r\n    }\r\n    next();\r\n  };\r\n};"
+        }
+    ]
+}

@@ -1,0 +1,62 @@
+{
+    "sourceFile": "index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1672368409570,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1672370090430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n ConnectDB();\r\n \r\n \r\n app.use(\"/user\", userRoute);\r\n+app.use(\"/user\", userRoute);\r\n \r\n app.get(\"/\", (req, res) => {\r\n     res.send(`<h1> Server is running! </h1>`);\r\n })\r\n"
+                },
+                {
+                    "date": 1672370095715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n ConnectDB();\r\n \r\n \r\n app.use(\"/user\", userRoute);\r\n-app.use(\"/user\", userRoute);\r\n+app.use(\"/profile\", userRoute);\r\n \r\n app.get(\"/\", (req, res) => {\r\n     res.send(`<h1> Server is running! </h1>`);\r\n })\r\n"
+                },
+                {
+                    "date": 1672370132127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,10 @@\n ConnectDB();\r\n \r\n \r\n app.use(\"/user\", userRoute);\r\n-app.use(\"/profile\", userRoute);\r\n \r\n+\r\n app.get(\"/\", (req, res) => {\r\n     res.send(`<h1> Server is running! </h1>`);\r\n })\r\n \r\n"
+                },
+                {
+                    "date": 1672377508345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n //database\r\n ConnectDB();\r\n \r\n \r\n-app.use(\"/user\", userRoute);\r\n+app.use(\"/api\", userRoute);\r\n \r\n \r\n app.get(\"/\", (req, res) => {\r\n     res.send(`<h1> Server is running! </h1>`);\r\n"
+                },
+                {
+                    "date": 1673601009621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n \r\n app.use(\"/api\", userRoute);\r\n \r\n \r\n+\r\n app.get(\"/\", (req, res) => {\r\n     res.send(`<h1> Server is running! </h1>`);\r\n })\r\n \r\n"
+                },
+                {
+                    "date": 1673601015371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import colors from \"colors\";\r\n import ConnectDB from \"./config/dataBase.js\";\r\n import userRoute from \"./routes/user_route.js\";\r\n \r\n+\r\n const app = express();\r\n app.use(express.json());\r\n app.use(morgan(\"dev\"));\r\n app.use(express.urlencoded({extended:true}))\r\n"
+                },
+                {
+                    "date": 1673601022642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n import morgan from \"morgan\";\r\n import colors from \"colors\";\r\n import ConnectDB from \"./config/dataBase.js\";\r\n import userRoute from \"./routes/user_route.js\";\r\n+import \r\n \r\n-\r\n const app = express();\r\n app.use(express.json());\r\n app.use(morgan(\"dev\"));\r\n app.use(express.urlencoded({extended:true}))\r\n"
+                },
+                {
+                    "date": 1673601046611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import morgan from \"morgan\";\r\n import colors from \"colors\";\r\n import ConnectDB from \"./config/dataBase.js\";\r\n import userRoute from \"./routes/user_route.js\";\r\n-import \r\n+import f\r\n \r\n const app = express();\r\n app.use(express.json());\r\n app.use(morgan(\"dev\"));\r\n"
+                },
+                {
+                    "date": 1673601056892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import morgan from \"morgan\";\r\n import colors from \"colors\";\r\n import ConnectDB from \"./config/dataBase.js\";\r\n import userRoute from \"./routes/user_route.js\";\r\n-import f\r\n+import foo\r\n \r\n const app = express();\r\n app.use(express.json());\r\n app.use(morgan(\"dev\"));\r\n"
+                },
+                {
+                    "date": 1673601070021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import morgan from \"morgan\";\r\n import colors from \"colors\";\r\n import ConnectDB from \"./config/dataBase.js\";\r\n import userRoute from \"./routes/user_route.js\";\r\n-import foodCategoryRoute from \r\n+import foodCategoryRoute from \"\"\r\n \r\n const app = express();\r\n app.use(express.json());\r\n app.use(morgan(\"dev\"));\r\n"
+                },
+                {
+                    "date": 1674801898810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \r\n cloudinary.config({\r\n   cloud_name: process.env.CLOUD_NAME,\r\n   api_key: process.env.CLOUD_API_KEY,\r\n-  api_secret: process.env.CLOUDAPI_SECRET,\r\n+  api_secret: process.env.CLOUD_API_SECRET,\r\n   secure: true,\r\n });\r\n //database\r\n ConnectDB();\r\n"
+                }
+            ],
+            "date": 1672368409570,
+            "name": "Commit-0",
+            "content": "import dotenv from \"dotenv\";\r\nimport express from \"express\";\r\nimport morgan from \"morgan\";\r\nimport colors from \"colors\";\r\nimport ConnectDB from \"./config/dataBase.js\";\r\nimport userRoute from \"./routes/user_route.js\";\r\n\r\nconst app = express();\r\napp.use(express.json());\r\napp.use(morgan(\"dev\"));\r\napp.use(express.urlencoded({extended:true}))\r\n\r\ndotenv.config();\r\n\r\n\r\n//database\r\nConnectDB();\r\n\r\n\r\napp.use(\"/user\", userRoute);\r\n\r\napp.get(\"/\", (req, res) => {\r\n    res.send(`<h1> Server is running! </h1>`);\r\n})\r\n\r\nconst PORT = process.env.PORT\r\n\r\napp.listen(PORT, () => {\r\n    console.log(`Server is running at port: ${PORT}`.cyan.underline.bold);\r\n});\r\n"
+        }
+    ]
+}

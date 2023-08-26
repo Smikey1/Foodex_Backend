@@ -1,0 +1,118 @@
+{
+    "sourceFile": "routes/food_route.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 25,
+            "patches": [
+                {
+                    "date": 1673607615408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1673607621331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import \n\\ No newline at end of file\n+import express from \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607628467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-import express from \n\\ No newline at end of file\n+import express from \"express\";\r\n+\r\n+import \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607636037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import express from \"express\";\r\n \r\n-import \n\\ No newline at end of file\n+import { addFood } from \"../controller/food_controller\";\r\n"
+                },
+                {
+                    "date": 1673607643121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n import express from \"express\";\r\n \r\n import { addFood } from \"../controller/food_controller\";\r\n+\r\n+const router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607652137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import express from \"express\";\r\n \r\n import { addFood } from \"../controller/food_controller\";\r\n \r\n-const router\n\\ No newline at end of file\n+const router = express\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607661468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n import express from \"express\";\r\n \r\n import { addFood } from \"../controller/food_controller\";\r\n \r\n-const router = express\n\\ No newline at end of file\n+const router = express.Router();\r\n+\r\n+router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607667624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,5 @@\n import { addFood } from \"../controller/food_controller\";\r\n \r\n const router = express.Router();\r\n \r\n-router\n\\ No newline at end of file\n+router.post(\"/add\")\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607673051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,5 @@\n import { addFood } from \"../controller/food_controller\";\r\n \r\n const router = express.Router();\r\n \r\n-router.post(\"/add\")\n\\ No newline at end of file\n+router.post(\"/add\", addFood)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607679240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,5 @@\n import { addFood } from \"../controller/food_controller\";\r\n \r\n const router = express.Router();\r\n \r\n-router.post(\"/add\", addFood)\n\\ No newline at end of file\n+router.post(\"/add\", addFood);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607685345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import express from \"express\";\r\n \r\n import { addFood } from \"../controller/food_controller\";\r\n+import au\r\n \r\n const router = express.Router();\r\n \r\n router.post(\"/add\", addFood);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607691206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import express from \"express\";\r\n \r\n import { addFood } from \"../controller/food_controller\";\r\n-import au\r\n+import { authenticated } from \"../middleware/auth\";\r\n \r\n const router = express.Router();\r\n \r\n router.post(\"/add\", addFood);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673607696367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,5 @@\n import { authenticated } from \"../middleware/auth\";\r\n \r\n const router = express.Router();\r\n \r\n-router.post(\"/add\", addFood);\n\\ No newline at end of file\n+router.post(\"/add\", addFood);\r\n"
+                },
+                {
+                    "date": 1673607704296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import express from \"express\";\r\n \r\n import { addFood } from \"../controller/food_controller\";\r\n import { authenticated } from \"../middleware/auth\";\r\n+import upload from \"../controller/file\";\r\n \r\n const router = express.Router();\r\n \r\n router.post(\"/add\", addFood);\r\n"
+                },
+                {
+                    "date": 1673607709602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,5 @@\n import upload from \"../controller/file\";\r\n \r\n const router = express.Router();\r\n \r\n-router.post(\"/add\", addFood);\r\n+router.post(\"/add\", authenticated addFood);\r\n"
+                },
+                {
+                    "date": 1673607720637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \r\n import { addFood } from \"../controller/food_controller\";\r\n import { authenticated } from \"../middleware/auth\";\r\n import upload from \"../controller/file\";\r\n+import { sign } from \"jsonwebtoken\";\r\n \r\n const router = express.Router();\r\n \r\n-router.post(\"/add\", authenticated addFood);\r\n+router.post(\"/add\", authenticated, upload.single(\"\") addFood);\r\n"
+                },
+                {
+                    "date": 1673607726635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n import { sign } from \"jsonwebtoken\";\r\n \r\n const router = express.Router();\r\n \r\n-router.post(\"/add\", authenticated, upload.single(\"\") addFood);\r\n+router.post(\"/add\", authenticated, upload.single(\"foodImage\") addFood);\r\n"
+                },
+                {
+                    "date": 1673607739771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n import { addFood } from \"../controller/food_controller\";\r\n import { authenticated } from \"../middleware/auth\";\r\n import upload from \"../controller/file\";\r\n-import { sign } from \"jsonwebtoken\";\r\n \r\n+\r\n const router = express.Router();\r\n \r\n-router.post(\"/add\", authenticated, upload.single(\"foodImage\") addFood);\r\n+router.post(\"/add\", authenticated, upload.single(\"foodImage\"), addFood);\r\n"
+                },
+                {
+                    "date": 1673607817320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import express from \"express\";\r\n \r\n-import { addFood } from \"../controller/food_controller\";\r\n+import { addFood } from \"../controller/food_controller.js\";\r\n import { authenticated } from \"../middleware/auth\";\r\n import upload from \"../controller/file\";\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1673607824253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import express from \"express\";\r\n \r\n import { addFood } from \"../controller/food_controller.js\";\r\n-import { authenticated } from \"../middleware/auth\";\r\n-import upload from \"../controller/file\";\r\n+import { authenticated } from \"../middleware/auth.js\";\r\n+import upload from \"../controller/file.js\";\r\n \r\n \r\n const router = express.Router();\r\n \r\n"
+                },
+                {
+                    "date": 1673607869646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,4 +7,6 @@\n \r\n const router = express.Router();\r\n \r\n router.post(\"/add\", authenticated, upload.single(\"foodImage\"), addFood);\r\n+\r\n+\r\n"
+                },
+                {
+                    "date": 1673607877023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,5 @@\n const router = express.Router();\r\n \r\n router.post(\"/add\", authenticated, upload.single(\"foodImage\"), addFood);\r\n \r\n-\r\n+export default router\r\n"
+                },
+                {
+                    "date": 1673609891318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \r\n \r\n const router = express.Router();\r\n \r\n-router.post(\"/add\", authenticated, upload.single(\"foodImage\"), addFood);\r\n+router.post(\"/add\", authenticated, upload.single(\"foodPhoto\"), addFood);\r\n \r\n-export default router\r\n+export default router;\r\n"
+                },
+                {
+                    "date": 1673613313590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import express from \"express\";\r\n \r\n-import { addFood } from \"../controller/food_controller.js\";\r\n+import { getAllFood, addFood } from \"../controller/food_controller.js\";\r\n import { authenticated } from \"../middleware/auth.js\";\r\n import upload from \"../controller/file.js\";\r\n \r\n-\r\n const router = express.Router();\r\n \r\n-router.post(\"/add\", authenticated, upload.single(\"foodPhoto\"), addFood);\r\n+router.get(\"/get\", getAllFood),\r\n+  router.post(\"/add\", authenticated, upload.single(\"foodPhoto\"), addFood);\r\n \r\n export default router;\r\n"
+                },
+                {
+                    "date": 1673613345832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import express from \"express\";\r\n \r\n-import { getAllFood, addFood } from \"../controller/food_controller.js\";\r\n+import { addFood, getAllFood } from \"../controller/food_controller.js\";\r\n import { authenticated } from \"../middleware/auth.js\";\r\n import upload from \"../controller/file.js\";\r\n \r\n const router = express.Router();\r\n"
+                },
+                {
+                    "date": 1673613414792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,8 @@\n import upload from \"../controller/file.js\";\r\n \r\n const router = express.Router();\r\n \r\n-router.get(\"/get\",authenticated getAllFood),\r\n+router.get(\"/get\",authenticated, getAllFood),\r\n   router.post(\"/add\", authenticated, upload.single(\"foodPhoto\"), addFood);\r\n \r\n export default router;\r\n"
+                }
+            ],
+            "date": 1673607615408,
+            "name": "Commit-0",
+            "content": "import "
+        }
+    ]
+}

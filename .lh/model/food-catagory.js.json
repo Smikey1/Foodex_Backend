@@ -1,0 +1,54 @@
+{
+    "sourceFile": "model/food-catagory.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1673600264485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1673600273221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,21 @@\n-import mongoose from \"mongoose\";\n\\ No newline at end of file\n+import mongoose from \"mongoose\";\r\n+\r\n+const foodCataSchema = new mongoose.Schema({\r\n+  foodTitle: {\r\n+    type: String,\r\n+    required: [true, \"Please filled foodTitle\"],\r\n+  },\r\n+  foodDescription: {\r\n+    type: String,\r\n+    required: [true, \"Please filled foodDescription\"],\r\n+  },\r\n+  foodImage: {\r\n+    type: String,\r\n+  },\r\n+  createAt: {\r\n+    type: Date,\r\n+    default: Date.now(),\r\n+  },\r\n+});\r\n+\r\n+export default mongoose.model(\"food\", foodSchema);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600279744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import mongoose from \"mongoose\";\r\n \r\n-const foodCataSchema = new mongoose.Schema({\r\n+const foodCategorySchema = new mongoose.Schema({\r\n   foodTitle: {\r\n     type: String,\r\n     required: [true, \"Please filled foodTitle\"],\r\n   },\r\n"
+                },
+                {
+                    "date": 1673600290133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n     default: Date.now(),\r\n   },\r\n });\r\n \r\n-export default mongoose.model(\"food\", foodSchema);\n\\ No newline at end of file\n+export default mongoose.model(\"food\", foodCategorySchema;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600300255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import mongoose from \"mongoose\";\r\n \r\n const foodCategorySchema = new mongoose.Schema({\r\n-  foodTitle: {\r\n+  Title: {\r\n     type: String,\r\n     required: [true, \"Please filled foodTitle\"],\r\n   },\r\n   foodDescription: {\r\n@@ -17,5 +17,5 @@\n     default: Date.now(),\r\n   },\r\n });\r\n \r\n-export default mongoose.model(\"food\", foodCategorySchema;\n\\ No newline at end of file\n+export default mongoose.model(\"food\", foodCategorySchema);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600306101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import mongoose from \"mongoose\";\r\n \r\n const foodCategorySchema = new mongoose.Schema({\r\n-  Title: {\r\n+  CategoryTitle: {\r\n     type: String,\r\n     required: [true, \"Please filled foodTitle\"],\r\n   },\r\n   foodDescription: {\r\n"
+                },
+                {
+                    "date": 1673600325553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,12 +4,8 @@\n   CategoryTitle: {\r\n     type: String,\r\n     required: [true, \"Please filled foodTitle\"],\r\n   },\r\n-  foodDescription: {\r\n-    type: String,\r\n-    required: [true, \"Please filled foodDescription\"],\r\n-  },\r\n   foodImage: {\r\n     type: String,\r\n   },\r\n   createAt: {\r\n"
+                },
+                {
+                    "date": 1673600441809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import mongoose from \"mongoose\";\r\n \r\n const foodCategorySchema = new mongoose.Schema({\r\n-  CategoryTitle: {\r\n+  Title: {\r\n     type: String,\r\n     required: [true, \"Please filled foodTitle\"],\r\n   },\r\n   foodImage: {\r\n"
+                },
+                {
+                    "date": 1673600584550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n     default: Date.now(),\r\n   },\r\n });\r\n \r\n-export default mongoose.model(\"food\", foodCategorySchema);\n\\ No newline at end of file\n+export default mongoose.model(\"\", foodCategorySchema);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600591575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n     default: Date.now(),\r\n   },\r\n });\r\n \r\n-export default mongoose.model(\"\", foodCategorySchema);\n\\ No newline at end of file\n+export default mongoose.model(\"Food_Category\", foodCategorySchema);\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1673600264485,
+            "name": "Commit-0",
+            "content": "import mongoose from \"mongoose\";"
+        }
+    ]
+}
