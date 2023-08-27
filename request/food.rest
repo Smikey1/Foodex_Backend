@@ -1,0 +1,81 @@
+@BASE_URL = http://localhost:5050
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZWExZGI2MTFlYzFkMzFjNjE5YTIyMyIsImlhdCI6MTY5MzA5MTMwOCwiZXhwIjoxNjkzMTc3NzA4fQ.wSVRD7_B9sqlyhz_C7WQNR7X6ooiVL3HRpgzF9CXrmg
+
+# Register Request
+POST {{BASE_URL}}/register
+Content-Type: application/json
+
+{
+    "fullName": "John Doe",
+    "email":"user@pakwan.com",
+    "password":"123456",
+    "phone":"9845712502"
+}
+
+###
+
+# Login Request
+POST {{BASE_URL}}/login
+Content-Type: application/json
+
+{
+    "phone":"9866406143",
+    "password":"Hira@123"
+}
+
+###
+
+# Order Request
+POST {{BASE_URL}}/order/insert/64ea898de8e534cf8653185f
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+###
+
+# Get User profile
+GET {{BASE_URL}}/user/profile
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+###
+
+# Get User Saved Recipe
+GET {{BASE_URL}}/savedRrecipe
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+###
+
+# Get User Post
+GET {{BASE_URL}}/post
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+###
+
+#  Saved Recipe Post
+POST {{BASE_URL}}/savedrecipe/61dbb376b3fcbebfd133feab
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+###
+
+
+# Update User Profile
+PATCH {{BASE_URL}}/
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+    "fullname": "Jenny Doe",
+    "bio": "I m great",
+    "website": "something.com",
+    "address": "Watsicachester",
+    "phone": "9856432671",
+    "gender": "female"
+}
+
+###
+
+# Update User Profile
+PATCH {{BASE_URL}}/follow/61d45c09d60e59afdc35239f
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}

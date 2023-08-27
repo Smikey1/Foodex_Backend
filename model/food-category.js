@@ -8,12 +8,12 @@ const foodCategorySchema = new mongoose.Schema({
   foodCategoryImageUrl: {
     type: String,
   },
-  food: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Food",
-    },
-  ],
+  // food: 
+  //   {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     ref: "Food",
+  //   },
+
   foodCategoryCreateAt: {
     type: Date,
     default: Date.now(),

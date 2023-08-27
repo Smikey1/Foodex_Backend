@@ -5,8 +5,8 @@ import {
   deleteCategory,
   getCategory,
   UpdateCategory,
-  getCategoryById,
   getSingleCategory,
+  getFoodCategory,
 } from "../controller/food_category_controller.js";
 import { authenticated, authorizeRoles } from "../middleware/auth.js";
 import upload from "../controller/file.js";
@@ -14,8 +14,10 @@ import upload from "../controller/file.js";
 const router = express.Router();
 router.post("/add", authenticated, AddCategory);
 router.get("/get", getCategory);
-router.get("/get/:id", getCategoryById);
+// router.get("/get/:id", getCategoryById);
 router.get("/getSingle/:id", getSingleCategory);
+router.get("/:categoryId", getFoodCategory);
+
 router.put(
   "/update/:id",
   authenticated,

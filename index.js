@@ -6,6 +6,8 @@ import ConnectDB from "./config/dataBase.js";
 import userRoute from "./routes/user_route.js";
 import foodCategoryRoute from "./routes/food_category-routes.js";
 import foodList from "./routes/food_route.js";
+import cartRoute from "./routes/cartRoutes.js"
+import orderRoutes from "./routes/orderRoutes.js"
 import { v2 as cloudinary } from "cloudinary";
 import fileUpload from "express-fileupload";
 
@@ -27,7 +29,8 @@ ConnectDB();
 app.use("/user", userRoute);
 app.use("/food_category", foodCategoryRoute);
 app.use("/food", foodList);
-
+app.use("/cart", cartRoute);
+app.use("/order", orderRoutes);
 app.get("/", (req, res) => {
   res.send(`<h1> Server is running! </h1>`);
 });

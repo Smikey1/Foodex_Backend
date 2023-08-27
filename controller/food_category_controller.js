@@ -3,8 +3,6 @@ import { upload_image } from "../middleware/cloudinary.js";
 
 // Add new Category
 export const AddCategory = async (req, res) => {
-  console.log(req.files);
-  console.log(req.files.tempFilePath);
   const formImage = req.files.foodImage;
   const imagePath = formImage.tempFilePath;
   const _id = req.user._id;
@@ -20,7 +18,6 @@ export const AddCategory = async (req, res) => {
           message: "Filled can't be empty!",
         });
       }
-      // const Image = req.file.filename;
 
       const exist = await Food_Category.findOne({ foodCategoryTitle: title });
       if (exist) {
@@ -29,9 +26,6 @@ export const AddCategory = async (req, res) => {
           message: "Name must be different!",
         });
       }
-      console.log("----CREate hunu aagi-----");
-      console.log(foodImage);
-      console.log(foodImage.secure_url);
 
       const foodCategory = await Food_Category.create({
         foodCategoryTitle: title,
@@ -66,7 +60,10 @@ export const AddCategory = async (req, res) => {
 // Get All Category
 export const getCategory = async (req, res) => {
   try {
-    const food_Category = await Food_Category.find().populate("food");
+    const food_Category = await Food_Category.find({}).sort({ _id: -1 });
+    console.log(food_Category);
+    console.log(food_Category.food);
+
     if (!food_Category) {
       return res.status(400).json({
         success: false,
@@ -86,36 +83,58 @@ export const getCategory = async (req, res) => {
   }
 };
 
-// Get category by ID
-export const getCategoryById = async (req, res) => {
-  try {
-    const food_Category = await Food_Category.findById(req.params.id).populate(
-      "food"
-    );
-    if (!food_Category) {
-      return res.status(400).json({
-        success: false,
-        message: "Not found!",
-      });
+// 
+
+
+export const getFoodCategory = async (req, res) => {
+    try {
+      let Categories = await Food_Category.find({
+        foodCategoryTitle: req.body.foodCategoryTitle,
+      }).sort({ _id: -1 });
+      if (Categories) {
+        return res.status(200).json({
+          success: true,
+          message: "Category Fetched Successfully",
+          data: Categories
+        });
+      }
+    } catch (err) {
+      console.log(err);
     }
-    res.status(200).json({
-      success: true,
-      message: "Category Fetched successfully!",
-      data: food_Category,
-    });
-  } catch (error) {
-    return res.status(500).json({
-      success: false,
-      message: error.message,
-    });
   }
-};
+
+// Get category by ID
+// export const getCategoryById = async (req, res) => {
+//   try {
+//     const food_Category = await Food_Category.findById(req.params.id).populate({
+//       path: "food",
+//       model: "Food",
+//       select: "title",
+//     });
+//     if (!food_Category) {
+//       return res.status(400).json({
+//         success: false,
+//         message: "Not found!",
+//       });
+//     }
+//     res.status(200).json({
+//       success: true,
+//       message: "Category Fetched successfully!",
+//       data: food_Category,
+//     });
+//   } catch (error) {
+//     return res.status(500).json({
+//       success: false,
+//       message: error.message,
+//     });
+//   }
+// };
 
 export const getSingleCategory = async (req, res) => {
   try {
     const food_Category = await Food_Category.findOne({
       _id: req.params.id,
-    }).populate("food");
+    }).sort({ _id: -1 });
     if (!food_Category) {
       return res.status(400).json({
         success: false,

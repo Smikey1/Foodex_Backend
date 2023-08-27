@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
 const userSchema = new mongoose.Schema({
@@ -19,7 +18,7 @@ const userSchema = new mongoose.Schema({
     nullable: true,
   },
   phone: {
-    type: Number,
+    type: String,
     unique: true,
     required: [true, "Please enter your phone number"],
     maxLength: [10, "Number must be only 10 digits"],
@@ -38,25 +37,19 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: "User",
   },
+  foodWishlist: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Food",
+      select: false,
+    },
+  ],
 
   createAt: {
     type: Date,
     default: Date.now(),
   },
 });
-
-userSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) {
-    next();
-  }
-
-  const salt = await bcrypt.genSalt(10);
-  this.password = await bcrypt.hash(this.password, salt);
-});
-
-userSchema.methods.comparePassword = async function (enteredPassword) {
-  return await bcrypt.compare(enteredPassword, this.password);
-};
 
 userSchema.methods.getSignedJwtToken = function () {
   return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {

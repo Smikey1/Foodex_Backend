@@ -7,11 +7,14 @@ export const addFood = async (req, res) => {
   const formImage = req.files.foodPhoto;
   const imagePath = formImage.tempFilePath;
   const _id = req.user._id;
+  const { category: categoryId } = req.body;
+  console.log(categoryId);
   if (formImage) {
     try {
       const foodImage = await upload_image(imagePath, _id);
 
       const { title, description, price, category } = req.body;
+
       if (!title || !description || !price || !category) {
         return res.status(400).json({
           success: false,
@@ -57,6 +60,31 @@ export const addFood = async (req, res) => {
 export const getAllFood = async (req, res) => {
   try {
     const food = await Food.find().populate("category");
+    if (!food) {
+      return res.status(400).json({
+        success: false,
+        message: "Not found!",
+      });
+    }
+    res.status(200).json({
+      success: true,
+      message: "food get success!",
+      data: food,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+// Get all Categorized Food
+export const getAllCategorizedFood = async (req, res) => {
+  try {
+    const food = await Food.find({
+      category: req.params.categoryId,
+    }).populate("category");
     if (!food) {
       return res.status(400).json({
         success: false,
